@@ -9,7 +9,7 @@
 
 <style>
     body { background-color: #000; color: white; font-family: Arial; margin: 0; overflow-x: auto; user-select: none; }
-    .map-container { position: relative; width: 25500px; height: 3000px; background-color: #0b0c10; }
+    .map-container { position: relative; width: 25500px; height: 2000px; background-color: #0b0c10; }
 
     /* --- ESTILO SEÑALES --- */
     .senal-unificada { position: absolute; display: flex; flex-direction: column; align-items: center; z-index: 150; }
@@ -706,10 +706,8 @@ z-index: 9999 !important;
 <div id="barra-navegacion" style="position: fixed; bottom: 15px; left: 15px; z-index: 99999; display: flex; gap: 8px; overflow-x: auto; max-width: 95vw; padding-bottom: 5px; scrollbar-width: thin;">
     <!-- Nuevas ubicaciones -->
     <button onclick="irAEstacion(this, 0)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Retiro</button>
-    <button onclick="irAEstacion(this, 8700)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 E. Maldonado</button>
-    
-    <!-- Estaciones existentes con +10500 de desplazamiento horizontal -->
-    <button onclick="irAEstacion(this, 10500, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Belgrano C</button>
+    <button onclick="irAEstacion(this, 8400)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 E. Maldonado</button>
+     <button onclick="irAEstacion(this, 10500, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Belgrano C</button>
     <button onclick="irAEstacion(this, 11800, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Núñez</button>
     <button onclick="irAEstacion(this, 13460, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Olivos</button>
     <button onclick="irAEstacion(this, 15050, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 San Isidro</button>
@@ -1062,6 +1060,24 @@ z-index: 9999 !important;
 
 
 
+
+
+
+<div class="linea-limite linea-v" style="top: 970px; left: 8495px; height: 235px;"></div>
+<div class="linea-limite linea-h" style="top: 1205px; left: 8495px; width: 650px;"></div>
+<div class="linea-limite linea-v" style="top: 1205px; left: 9145px; height: 260px;"></div>
+
+<div class="linea-limite linea-v" style="top: 970px; left: 9925px; height: 335px;"></div>
+<div class="linea-limite linea-h" style="top: 1305px; left: 9925px; width: 125px;"></div>
+<div class="linea-limite linea-v" style="top: 1305px; left: 10050px; height: 160px;"></div>
+
+
+<div id="s63_base" class="senal-unificada f-rojo nombre-s-abajo" style="top: 970px; left: 8500px;"><div class="s-nombre-real">63</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+
+
+
+
 <div class="status-box-mald">
     <div class="status-header-text">MALDONADO</div>
     <div class="status-content">
@@ -1269,6 +1285,10 @@ z-index: 9999 !important;
 
 <div id="s76_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 10215px;"><div class="s-nombre-real">76</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
+<div style="position: absolute; top: 848px; left: 7365px; text-align: center;"><div id="EW23a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 848px; left: 7875px; text-align: center;"><div id="EW21a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 948px; left: 7975px; text-align: center;"><div id="EW21b" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 948px; left: 8550px; text-align: center;"><div id="EW33a" class="led-enclav enclav-cambio"></div></div>
 
 
 
@@ -2763,7 +2783,7 @@ z-index: 9999 !important;
         // Mueve el scroll de la pantalla de forma suave (Horizontal + Vertical en 800)
         window.scrollTo({
             left: posicionX,
-            top: 850,
+            top: 900,
             behavior: 'smooth'
         });
 
@@ -2847,7 +2867,32 @@ window.addEventListener('load', function() {
         "W72": { pm: 'w72pm', plus: 'w72plus', minus: 'w72minus' },
         "W75": { pm: 'w75pm', plus: 'w75plus', minus: 'w75minus'},
         "W23": { pm: 'w23pm', plus: 'w23plus', minus: 'w23minus' },
-        "W21a": { pm: 'w21apm', plus: 'w21aplus', minus: 'w21aminus'}
+        "W21a": { pm: 'w21apm', plus: 'w21aplus', minus: 'w21aminus'},
+        "W21b": { pm: 'w21bpm', plus: 'w21bplus', minus: 'w21bminus'},
+        "W19a": { pm: 'w19apm', plus: 'w19aplus', minus: 'w19aminus'},
+        "W19b": { pm: 'w19bpm', plus: 'w19bplus', minus: 'w19bminus'},
+        "W15a": { pm: 'w15apm', plus: 'w15aplus', minus: 'w15aminus'},
+        "W15b": { pm: 'w15bpm', plus: 'w15bplus', minus: 'w15bminus'},
+        "W18a": { pm: 'w18apm', plus: 'w18aplus', minus: 'w18aminus'},
+        "W18b": { pm: 'w18bpm', plus: 'w18bplus', minus: 'w18bminus'},
+        "W14a": { pm: 'w14apm', plus: 'w14aplus', minus: 'w14aminus'},
+        "W14b": { pm: 'w14bpm', plus: 'w14bplus', minus: 'w14bminus'},
+        "W11a": { pm: 'w11apm', plus: 'w11aplus', minus: 'w11aminus'},
+        "W11d": { pm: 'w11dpm', plus: 'w11dplus', minus: 'w11dminus'},
+        "W11b": { pm: 'w11bpm', plus: 'w11bplus', minus: 'w11bminus'},
+        "W11c": { pm: 'w11cpm', plus: 'w11cplus', minus: 'w11cminus'},
+        "W12a": { pm: 'w12apm', plus: 'w12aplus', minus: 'w12aminus'},
+        "W12d": { pm: 'w12dpm', plus: 'w12dplus', minus: 'w12dminus'},
+        "W12b": { pm: 'w12bpm', plus: 'w12bplus', minus: 'w12bminus'},
+        "W12c": { pm: 'w12cpm', plus: 'w12cplus', minus: 'w12cminus'},
+        "W32a": { pm: 'w32apm', plus: 'w32aplus', minus: 'w32aminus'},
+        "W32b": { pm: 'w32bpm', plus: 'w32bplus', minus: 'w32bminus'},
+        "W33a": { pm: 'w33apm', plus: 'w33aplus', minus: 'w33aminus'},
+        "W33b": { pm: 'w33bpm', plus: 'w33bplus', minus: 'w33bminus'}
+
+
+
+
 
                 
     };
@@ -2950,6 +2995,7 @@ window.addEventListener('load', function() {
     var w33a_estado = 0
     var w33b_estado = 0
 
+    
    
     var curW23_estado = "1";
     var curW21a_estado = "1";
@@ -3201,8 +3247,8 @@ setInterval(function() {
    procesarCambioGeneral("W23", TABLA_CAMBIOS["W23"], curW23, w23_estado, flagAveria_Mal23 == 1, tic);
    procesarCambioGeneral("W21a", TABLA_CAMBIOS["W21a"], curW21a, w21a_estado, flagAveria_Mal21a == 1, tic);
    procesarCambioGeneral("W21b", TABLA_CAMBIOS["W21b"], curW21b, w21b_estado, flagAveria_Mal21b == 1, tic);
-   procesarCambioGeneral("W21a", TABLA_CAMBIOS["W21a"], curW21a, w21a_estado, flagAveria_Mal21a == 1, tic);
-   procesarCambioGeneral("W21b", TABLA_CAMBIOS["W21b"], curW21b, w21b_estado, flagAveria_Mal21b == 1, tic);
+   procesarCambioGeneral("W19a", TABLA_CAMBIOS["W19a"], curW19a, w19a_estado, flagAveria_Mal19a == 1, tic);
+   procesarCambioGeneral("W19b", TABLA_CAMBIOS["W19b"], curW19b, w19b_estado, flagAveria_Mal19b == 1, tic);
    procesarCambioGeneral("W15a", TABLA_CAMBIOS["W15a"], curW15a, w15a_estado, flagAveria_Mal15a == 1, tic);
    procesarCambioGeneral("W15b", TABLA_CAMBIOS["W15b"], curW15b, w15b_estado, flagAveria_Mal15b == 1, tic);
    procesarCambioGeneral("W18a", TABLA_CAMBIOS["W18a"], curW18a, w18a_estado, flagAveria_Mal18a == 1, tic);
@@ -3221,7 +3267,7 @@ setInterval(function() {
    procesarCambioGeneral("W32b", TABLA_CAMBIOS["W32b"], curW32b, w32b_estado, flagAveria_Mal32b == 1, tic);
    procesarCambioGeneral("W33a", TABLA_CAMBIOS["W33a"], curW33a, w33a_estado, flagAveria_Mal33a == 1, tic);
    procesarCambioGeneral("W33b", TABLA_CAMBIOS["W33b"], curW33b, w33b_estado, flagAveria_Mal33b == 1, tic);
-
+  
 
 // Copiar la clase exacta de color de w75minus a w75mm
 var w75minusEl = document.getElementById('w75minus');
@@ -3591,12 +3637,167 @@ function actualizarTableroSanFernando() {
 actualizarTableroSanFernando();
 
 
+// --- MALDONADO: Actualización independiente de LEDs de Cabecera y Circuitos ---
+
+// --- CONFIGURACIÓN DE APARATOS DE VÍA - MALDONADO ---
+var cambiosMaldonadoConfig = [
+    { plus: 'w23plus', minus: 'w23minus', pm: 'w23pm', cur: typeof curW23 !== 'undefined' ? curW23 : "1", avg: typeof flagAveria_Mal23 !== 'undefined' ? flagAveria_Mal23 : 0 },
+    { plus: 'w21aplus', minus: 'w21aminus', pm: 'w21apm', cur: typeof curW21a !== 'undefined' ? curW21a : "1", avg: typeof flagAveria_Mal21a !== 'undefined' ? flagAveria_Mal21a : 0 },
+    { plus: 'w21bplus', minus: 'w21bminus', pm: 'w21bpm', cur: typeof curW21b !== 'undefined' ? curW21b : "1", avg: typeof flagAveria_Mal21b !== 'undefined' ? flagAveria_Mal21b : 0 },
+    { plus: 'w19aplus', minus: 'w19aminus', pm: 'w19apm', cur: typeof curW19a !== 'undefined' ? curW19a : "1", avg: typeof flagAveria_Mal19a !== 'undefined' ? flagAveria_Mal19a : 0 },
+    { plus: 'w19bplus', minus: 'w19bminus', pm: 'w19bpm', cur: typeof curW19b !== 'undefined' ? curW19b : "1", avg: typeof flagAveria_Mal19b !== 'undefined' ? flagAveria_Mal19b : 0 },
+    { plus: 'w15aplus', minus: 'w15aminus', pm: 'w15apm', cur: typeof curW15a !== 'undefined' ? curW15a : "1", avg: typeof flagAveria_Mal15a !== 'undefined' ? flagAveria_Mal15a : 0 },
+    { plus: 'w15bplus', minus: 'w15bminus', pm: 'w15bpm', cur: typeof curW15b !== 'undefined' ? curW15b : "1", avg: typeof flagAveria_Mal15b !== 'undefined' ? flagAveria_Mal15b : 0 },
+    { plus: 'w18aplus', minus: 'w18aminus', pm: 'w18apm', cur: typeof curW18a !== 'undefined' ? curW18a : "1", avg: typeof flagAveria_Mal18a !== 'undefined' ? flagAveria_Mal18a : 0 },
+    { plus: 'w18bplus', minus: 'w18bminus', pm: 'w18bpm', cur: typeof curW18b !== 'undefined' ? curW18b : "1", avg: typeof flagAveria_Mal18b !== 'undefined' ? flagAveria_Mal18b : 0 },
+    { plus: 'w14aplus', minus: 'w14aminus', pm: 'w14apm', cur: typeof curW14a !== 'undefined' ? curW14a : "1", avg: typeof flagAveria_Mal14a !== 'undefined' ? flagAveria_Mal14a : 0 },
+    { plus: 'w14bplus', minus: 'w14bminus', pm: 'w14bpm', cur: typeof curW14b !== 'undefined' ? curW14b : "1", avg: typeof flagAveria_Mal14b !== 'undefined' ? flagAveria_Mal14b : 0 },
+    { plus: 'w11aplus', minus: 'w11aminus', pm: 'w11apm', cur: typeof curW11a !== 'undefined' ? curW11a : "1", avg: typeof flagAveria_Mal11a !== 'undefined' ? flagAveria_Mal11a : 0 },
+    { plus: 'w11dplus', minus: 'w11dminus', pm: 'w11dpm', cur: typeof curW11d !== 'undefined' ? curW11d : "1", avg: typeof flagAveria_Mal11d !== 'undefined' ? flagAveria_Mal11d : 0 },
+    { plus: 'w11bplus', minus: 'w11bminus', pm: 'w11bpm', cur: typeof curW11b !== 'undefined' ? curW11b : "1", avg: typeof flagAveria_Mal11b !== 'undefined' ? flagAveria_Mal11b : 0 },
+    { plus: 'w11cplus', minus: 'w11cminus', pm: 'w11cpm', cur: typeof curW11c !== 'undefined' ? curW11c : "1", avg: typeof flagAveria_Mal11c !== 'undefined' ? flagAveria_Mal11c : 0 },
+    { plus: 'w12aplus', minus: 'w12aminus', pm: 'w12apm', cur: typeof curW12a !== 'undefined' ? curW12a : "1", avg: typeof flagAveria_Mal12a !== 'undefined' ? flagAveria_Mal12a : 0 },
+    { plus: 'w12dplus', minus: 'w12dminus', pm: 'w12dpm', cur: typeof curW12d !== 'undefined' ? curW12d : "1", avg: typeof flagAveria_Mal12d !== 'undefined' ? flagAveria_Mal12d : 0 },
+    { plus: 'w12bplus', minus: 'w12bminus', pm: 'w12bpm', cur: typeof curW11b !== 'undefined' ? curW12b : "1", avg: typeof flagAveria_Mal12b !== 'undefined' ? flagAveria_Mal12b : 0 },
+    { plus: 'w12cplus', minus: 'w12cminus', pm: 'w12cpm', cur: typeof curW12c !== 'undefined' ? curW12c : "1", avg: typeof flagAveria_Mal12c !== 'undefined' ? flagAveria_Mal12c : 0 },
+    { plus: 'w32aplus', minus: 'w32aminus', pm: 'w32apm', cur: typeof curW32a !== 'undefined' ? curW32a : "1", avg: typeof flagAveria_Mal32a !== 'undefined' ? flagAveria_Mal32a : 0 },
+    { plus: 'w32bplus', minus: 'w32bminus', pm: 'w32bpm', cur: typeof curW32b !== 'undefined' ? curW32b : "1", avg: typeof flagAveria_Mal32b !== 'undefined' ? flagAveria_Mal32b : 0 },
+    { plus: 'w33aplus', minus: 'w33aminus', pm: 'w33apm', cur: typeof curW33a !== 'undefined' ? curW33a : "1", avg: typeof flagAveria_Mal33a !== 'undefined' ? flagAveria_Mal33a : 0 },
+    { plus: 'w33bplus', minus: 'w33bminus', pm: 'w33bpm', cur: typeof curW33b !== 'undefined' ? curW33b : "1", avg: typeof flagAveria_Mal33b !== 'undefined' ? flagAveria_Mal33b : 0 },
 
 
 
 
 
+   
+];
 
+// 1. Actualizar circuitos y averías en diagrama lineal para Maldonado
+cambiosMaldonadoConfig.forEach(function(c) {
+    var pEl = document.getElementById(c.plus);
+    var mEl = document.getElementById(c.minus);
+    var pmEl = document.getElementById(c.pm);
+
+    if (!pEl || !mEl || !pmEl) return;
+
+    [pEl, mEl, pmEl].forEach(el => el.classList.remove('via-fantasma'));
+
+    var enAveriaYParpadeo = (Number(c.avg) === 1 && typeof tic !== 'undefined' && tic);
+
+    if (String(c.cur) === "1") {
+        mEl.classList.add('via-fantasma');
+        if (enAveriaYParpadeo) {
+            pmEl.classList.add('via-fantasma');
+            pEl.classList.add('via-fantasma');
+        }
+    } else {
+        pEl.classList.add('via-fantasma');
+        if (enAveriaYParpadeo) {
+            pmEl.classList.add('via-fantasma');
+            mEl.classList.add('via-fantasma');
+        }
+    }
+});
+
+// 2. Actualizar Tablero Superior de Maldonado de forma aislada
+// --- CONFIGURACIÓN DE APARATOS DE VÍA - MALDONADO ---
+var cambiosMaldonadoConfig = [
+    { plus: 'w23plus', minus: 'w23minus', pm: 'w23pm', cur: typeof curW23 !== 'undefined' ? curW23 : "1", avg: typeof flagAveria_Mal23 !== 'undefined' ? flagAveria_Mal23 : 0 },
+    { plus: 'w21aplus', minus: 'w21aminus', pm: 'w21apm', cur: typeof curW21a !== 'undefined' ? curW21a : "1", avg: typeof flagAveria_Mal21a !== 'undefined' ? flagAveria_Mal21a : 0 },
+    { plus: 'w21bplus', minus: 'w21bminus', pm: 'w21bpm', cur: typeof curW21b !== 'undefined' ? curW21b : "1", avg: typeof flagAveria_Mal21b !== 'undefined' ? flagAveria_Mal21b : 0 },
+    { plus: 'w19aplus', minus: 'w19aminus', pm: 'w19apm', cur: typeof curW19a !== 'undefined' ? curW19a : "1", avg: typeof flagAveria_Mal19a !== 'undefined' ? flagAveria_Mal19a : 0 },
+    { plus: 'w19bplus', minus: 'w19bminus', pm: 'w19bpm', cur: typeof curW19b !== 'undefined' ? curW19b : "1", avg: typeof flagAveria_Mal19b !== 'undefined' ? flagAveria_Mal19b : 0 },
+    { plus: 'w15aplus', minus: 'w15aminus', pm: 'w15apm', cur: typeof curW15a !== 'undefined' ? curW15a : "1", avg: typeof flagAveria_Mal15a !== 'undefined' ? flagAveria_Mal15a : 0 },
+    { plus: 'w15bplus', minus: 'w15bminus', pm: 'w15bpm', cur: typeof curW15b !== 'undefined' ? curW15b : "1", avg: typeof flagAveria_Mal15b !== 'undefined' ? flagAveria_Mal15b : 0 },
+    { plus: 'w18aplus', minus: 'w18aminus', pm: 'w18apm', cur: typeof curW18a !== 'undefined' ? curW18a : "1", avg: typeof flagAveria_Mal18a !== 'undefined' ? flagAveria_Mal18a : 0 },
+    { plus: 'w18bplus', minus: 'w18bminus', pm: 'w18bpm', cur: typeof curW18b !== 'undefined' ? curW18b : "1", avg: typeof flagAveria_Mal18b !== 'undefined' ? flagAveria_Mal18b : 0 },
+    { plus: 'w14aplus', minus: 'w14aminus', pm: 'w14apm', cur: typeof curW14a !== 'undefined' ? curW14a : "1", avg: typeof flagAveria_Mal14a !== 'undefined' ? flagAveria_Mal14a : 0 },
+    { plus: 'w14bplus', minus: 'w14bminus', pm: 'w14bpm', cur: typeof curW14b !== 'undefined' ? curW14b : "1", avg: typeof flagAveria_Mal14b !== 'undefined' ? flagAveria_Mal14b : 0 },
+    { plus: 'w11aplus', minus: 'w11aminus', pm: 'w11apm', cur: typeof curW11a !== 'undefined' ? curW11a : "1", avg: typeof flagAveria_Mal11a !== 'undefined' ? flagAveria_Mal11a : 0 },
+    { plus: 'w11dplus', minus: 'w11dminus', pm: 'w11dpm', cur: typeof curW11d !== 'undefined' ? curW11d : "1", avg: typeof flagAveria_Mal11d !== 'undefined' ? flagAveria_Mal11d : 0 },
+    { plus: 'w11bplus', minus: 'w11bminus', pm: 'w11bpm', cur: typeof curW11b !== 'undefined' ? curW11b : "1", avg: typeof flagAveria_Mal11b !== 'undefined' ? flagAveria_Mal11b : 0 },
+    { plus: 'w11cplus', minus: 'w11cminus', pm: 'w11cpm', cur: typeof curW11c !== 'undefined' ? curW11c : "1", avg: typeof flagAveria_Mal11c !== 'undefined' ? flagAveria_Mal11c : 0 },
+    { plus: 'w12aplus', minus: 'w12aminus', pm: 'w12apm', cur: typeof curW12a !== 'undefined' ? curW12a : "1", avg: typeof flagAveria_Mal12a !== 'undefined' ? flagAveria_Mal12a : 0 },
+    { plus: 'w12dplus', minus: 'w12dminus', pm: 'w12dpm', cur: typeof curW12d !== 'undefined' ? curW12d : "1", avg: typeof flagAveria_Mal12d !== 'undefined' ? flagAveria_Mal12d : 0 },
+    { plus: 'w12bplus', minus: 'w12bminus', pm: 'w12bpm', cur: typeof curW12b !== 'undefined' ? curW12b : "1", avg: typeof flagAveria_Mal12b !== 'undefined' ? flagAveria_Mal12b : 0 },
+    { plus: 'w12cplus', minus: 'w12cminus', pm: 'w12cpm', cur: typeof curW12c !== 'undefined' ? curW12c : "1", avg: typeof flagAveria_Mal12c !== 'undefined' ? flagAveria_Mal12c : 0 },
+    { plus: 'w32aplus', minus: 'w32aminus', pm: 'w32apm', cur: typeof curW32a !== 'undefined' ? curW32a : "1", avg: typeof flagAveria_Mal32a !== 'undefined' ? flagAveria_Mal32a : 0 },
+    { plus: 'w32bplus', minus: 'w32bminus', pm: 'w32bpm', cur: typeof curW32b !== 'undefined' ? curW32b : "1", avg: typeof flagAveria_Mal32b !== 'undefined' ? flagAveria_Mal32b : 0 },
+    { plus: 'w33aplus', minus: 'w33aminus', pm: 'w33apm', cur: typeof curW33a !== 'undefined' ? curW33a : "1", avg: typeof flagAveria_Mal33a !== 'undefined' ? flagAveria_Mal33a : 0 },
+    { plus: 'w33bplus', minus: 'w19bminus', pm: 'w19bpm', cur: typeof curW33b !== 'undefined' ? curW33b : "1", avg: typeof flagAveria_Mal33b !== 'undefined' ? flagAveria_Mal33b : 0 },
+
+
+
+];
+
+// 1. Actualizar circuitos y averías en diagrama lineal para Maldonado
+cambiosMaldonadoConfig.forEach(function(c) {
+    var pEl = document.getElementById(c.plus);
+    var mEl = document.getElementById(c.minus);
+    var pmEl = document.getElementById(c.pm);
+
+    if (!pEl || !mEl || !pmEl) return;
+
+    [pEl, mEl, pmEl].forEach(el => el.classList.remove('via-fantasma'));
+
+    var enAveriaYParpadeo = (Number(c.avg) === 1 && typeof tic !== 'undefined' && tic);
+
+    if (String(c.cur) === "1") {
+        mEl.classList.add('via-fantasma');
+        if (enAveriaYParpadeo) {
+            pmEl.classList.add('via-fantasma');
+            pEl.classList.add('via-fantasma');
+        }
+    } else {
+        pEl.classList.add('via-fantasma');
+        if (enAveriaYParpadeo) {
+            pmEl.classList.add('via-fantasma');
+            mEl.classList.add('via-fantasma');
+        }
+    }
+});
+
+// 2. Actualizar Tablero Superior de Maldonado de forma aislada
+function actualizarTableroMaldonado() {
+    if (typeof curW23 === 'undefined') return;
+
+    function actualizarLEDsCambio(curVal, avgVal, idA, idP, idM) {
+        let la = document.getElementById(idA);
+        let lp = document.getElementById(idP);
+        let lm = document.getElementById(idM);
+        if (la) la.classList.toggle('l-red', Number(avgVal) === 1);
+        if (lp) lp.classList.toggle('l-white', String(curVal) === "1");
+        if (lm) lm.classList.toggle('l-white', String(curVal) !== "1");
+    }
+
+    actualizarLEDsCambio(curW23, flagAveria_Mal23, 'AW23', 'LW23P', 'LW23M');
+    actualizarLEDsCambio(curW21a, flagAveria_Mal21a, 'AW21a', 'LW21aP', 'LW21aM');
+    actualizarLEDsCambio(curW21b, flagAveria_Mal21b, 'AW21b', 'LW21bP', 'LW21bM');
+    actualizarLEDsCambio(curW19a, flagAveria_Mal19a, 'AW19a', 'LW19aP', 'LW19aM');
+    actualizarLEDsCambio(curW19b, flagAveria_Mal19b, 'AW19b', 'LW19bP', 'LW19bM');
+    actualizarLEDsCambio(curW15a, flagAveria_Mal15a, 'AW15a', 'LW15aP', 'LW15aM');
+    actualizarLEDsCambio(curW15b, flagAveria_Mal15b, 'AW15b', 'LW15bP', 'LW15bM');
+    actualizarLEDsCambio(curW18a, flagAveria_Mal18a, 'AW18a', 'LW18aP', 'LW18aM');
+    actualizarLEDsCambio(curW18b, flagAveria_Mal18b, 'AW18b', 'LW18bP', 'LW18bM');
+    actualizarLEDsCambio(curW14a, flagAveria_Mal14a, 'AW14a', 'LW14aP', 'LW14aM');
+    actualizarLEDsCambio(curW14b, flagAveria_Mal14b, 'AW14b', 'LW14bP', 'LW14bM');
+    actualizarLEDsCambio(curW11a, flagAveria_Mal11a, 'AW11a', 'LW11aP', 'LW11aM');
+    actualizarLEDsCambio(curW11d, flagAveria_Mal11d, 'AW11d', 'LW11dP', 'LW11dM');
+    actualizarLEDsCambio(curW11b, flagAveria_Mal11b, 'AW11b', 'LW11bP', 'LW11bM');
+    actualizarLEDsCambio(curW11c, flagAveria_Mal11c, 'AW11c', 'LW11cP', 'LW11cM');
+    actualizarLEDsCambio(curW12a, flagAveria_Mal12a, 'AW12a', 'LW12aP', 'LW12aM');
+    actualizarLEDsCambio(curW12d, flagAveria_Mal12d, 'AW12d', 'LW12dP', 'LW12dM');
+    actualizarLEDsCambio(curW12b, flagAveria_Mal12b, 'AW12b', 'LW12bP', 'LW12bM');
+    actualizarLEDsCambio(curW12c, flagAveria_Mal12c, 'AW12c', 'LW12cP', 'LW12cM');
+    actualizarLEDsCambio(curW32a, flagAveria_Mal32a, 'AW32a', 'LW32aP', 'LW32aM');
+    actualizarLEDsCambio(curW32b, flagAveria_Mal32b, 'AW32b', 'LW32bP', 'LW32bM');
+    actualizarLEDsCambio(curW33a, flagAveria_Mal33a, 'AW33a', 'LW33aP', 'LW33aM');
+    actualizarLEDsCambio(curW33b, flagAveria_Mal33b, 'AW33b', 'LW33bP', 'LW33bM');
+
+}
+
+// Ejecución segura inicial
+actualizarTableroMaldonado();
 
 
 
@@ -4944,20 +5145,30 @@ if (avSf6265) {
     pW();
 }
 
-// --- PROCESAMIENTO SECTOR MALDONADO (VÍAS, SEÑALES Y TRÁFICO) ---
+
 // --- PROCESAMIENTO SECTOR MALDONADO (CORREGIDO) ---
 var dataMal = cabinas.maldonado || cabinas["maldonado"];
-if (dataMal) {
+if (dataMal && dataMal.status) {
+
     
-    // 1. LED de Estado / Heartbeat
-    if (dataMal.status) {
-        var led = document.getElementById('indicadormaldonado') || document.getElementById('indicadorMaldonado');
+            var led = document.getElementById('indicadormaldonado') || document.getElementById('indicadorMaldonado');
         if (led) {
-            let est = Number(dataMal.status.status);
-            led.className = (est === 1) ? 'led-status led-on' : 'led-status led-off';
-            if (est === 1) window.lastHeartbeatmaldonado = Date.now();
-        }
-    }
+            if (Number(dataMal.status.status) === 1) {
+                    led.className = 'led-status led-on';
+                    window.lastHeartbeatmaldonado = Date.now();
+                } else {
+                    led.className = 'led-status led-off';
+                }
+            }
+
+
+   
+        
+
+
+
+
+
 
     // 2. Procesamiento de Vías
     if (dataMal.vias) {
@@ -4971,26 +5182,115 @@ if (dataMal) {
 
         if(dataMal.vias["w23pm"] !== undefined) w23_estado = dataMal.vias["w23pm"];
         if(dataMal.vias["w21apm"] !== undefined) w21a_estado = dataMal.vias["w21apm"];
-    }
+        if(dataMal.vias["w21bpm"] !== undefined) w21b_estado = dataMal.vias["w21bpm"]; 
+        if(dataMal.vias["w19apm"] !== undefined) w19a_estado = dataMal.vias["w19apm"];
+        if(dataMal.vias["w19bpm"] !== undefined) w19b_estado = dataMal.vias["w19bpm"];  
+        if(dataMal.vias["w15apm"] !== undefined) w15a_estado = dataMal.vias["w15apm"];
+        if(dataMal.vias["w15bpm"] !== undefined) w15b_estado = dataMal.vias["w15bpm"];
+        if(dataMal.vias["w18apm"] !== undefined) w18a_estado = dataMal.vias["w18apm"];
+        if(dataMal.vias["w18bpm"] !== undefined) w18b_estado = dataMal.vias["w18bpm"];  
+        if(dataMal.vias["w14apm"] !== undefined) w14a_estado = dataMal.vias["w14apm"];
+        if(dataMal.vias["w14bpm"] !== undefined) w14b_estado = dataMal.vias["w14bpm"]; 
+        if(dataMal.vias["w11apm"] !== undefined) w11a_estado = dataMal.vias["w11apm"];
+        if(dataMal.vias["w11bpm"] !== undefined) w11b_estado = dataMal.vias["w11bpm"];  
+        if(dataMal.vias["w11cpm"] !== undefined) w11c_estado = dataMal.vias["w11cpm"];
+        if(dataMal.vias["w11dpm"] !== undefined) w11d_estado = dataMal.vias["w11dpm"]; 
+        if(dataMal.vias["w12apm"] !== undefined) w12a_estado = dataMal.vias["w12apm"];
+        if(dataMal.vias["w12bpm"] !== undefined) w12b_estado = dataMal.vias["w12bpm"];  
+        if(dataMal.vias["w12cpm"] !== undefined) w12c_estado = dataMal.vias["w12cpm"];
+        if(dataMal.vias["w12dpm"] !== undefined) w12d_estado = dataMal.vias["w12dpm"]; 
+        if(dataMal.vias["w32apm"] !== undefined) w32a_estado = dataMal.vias["w32apm"];
+        if(dataMal.vias["w32bpm"] !== undefined) w32b_estado = dataMal.vias["w32bpm"]; 
+        if(dataMal.vias["w33apm"] !== undefined) w33a_estado = dataMal.vias["w33apm"];
+        if(dataMal.vias["w33bpm"] !== undefined) w33b_estado = dataMal.vias["w33bpm"];
+
+
+
+
+
+
+
+
+
+
+ }
 
     // 3. Lectura de Posiciones de Cambios y Averías desde Firebase
-   if (dataMal.cambios) {
+    if (dataMal.cambios) {
         if (dataMal.cambios.W23 !== undefined) curW23 = dataMal.cambios.W23.toString();
         if (dataMal.cambios.W21a !== undefined) curW21a = dataMal.cambios.W21a.toString();
+        if (dataMal.cambios.W21b !== undefined) curW21b = dataMal.cambios.W21b.toString(); 
+        if (dataMal.cambios.W19a !== undefined) curW19a = dataMal.cambios.W19a.toString();
+        if (dataMal.cambios.W19b !== undefined) curW19b = dataMal.cambios.W19b.toString();
+        if (dataMal.cambios.W15a !== undefined) curW15a = dataMal.cambios.W15a.toString();
+        if (dataMal.cambios.W15b !== undefined) curW15b = dataMal.cambios.W15b.toString(); 
+        if (dataMal.cambios.W18a !== undefined) curW18a = dataMal.cambios.W18a.toString();
+        if (dataMal.cambios.W18b !== undefined) curW18b = dataMal.cambios.W18b.toString(); 
+        if (dataMal.cambios.W14a !== undefined) curW14a = dataMal.cambios.W14a.toString();
+        if (dataMal.cambios.W14b !== undefined) curW14b = dataMal.cambios.W14b.toString();
+        if (dataMal.cambios.W11a !== undefined) curW11a = dataMal.cambios.W11a.toString();
+        if (dataMal.cambios.W11b !== undefined) curW11b = dataMal.cambios.W11b.toString(); 
+        if (dataMal.cambios.W11c !== undefined) curW11c = dataMal.cambios.W11c.toString();
+        if (dataMal.cambios.W11d !== undefined) curW11d = dataMal.cambios.W11d.toString();
+        if (dataMal.cambios.W12a !== undefined) curW12a = dataMal.cambios.W12a.toString();
+        if (dataMal.cambios.W12b !== undefined) curW12b = dataMal.cambios.W12b.toString(); 
+        if (dataMal.cambios.W12c !== undefined) curW12c = dataMal.cambios.W12c.toString();
+        if (dataMal.cambios.W12d !== undefined) curW12d = dataMal.cambios.W12d.toString();
+        if (dataMal.cambios.W32a !== undefined) curW32a = dataMal.cambios.W32a.toString();
+        if (dataMal.cambios.W32b !== undefined) curW32b = dataMal.cambios.W32b.toString(); 
+        if (dataMal.cambios.W33a !== undefined) curW33a = dataMal.cambios.W33a.toString();
+        if (dataMal.cambios.W33b !== undefined) curW33b = dataMal.cambios.W33b.toString();
+
+
+
+
+
+ 
+      
         if (dataMal.cambios.AW23 !== undefined) flagAveria_Mal23 = parseInt(dataMal.cambios.AW23);
         if (dataMal.cambios.AW21a !== undefined) flagAveria_Mal21a = parseInt(dataMal.cambios.AW21a);
+        if (dataMal.cambios.AW21b !== undefined) flagAveria_Mal21b = parseInt(dataMal.cambios.AW21b); 
+        if (dataMal.cambios.AW19a !== undefined) flagAveria_Mal19a = parseInt(dataMal.cambios.AW19a);
+        if (dataMal.cambios.AW19b !== undefined) flagAveria_Mal19b = parseInt(dataMal.cambios.AW19b);   
+        if (dataMal.cambios.AW15a !== undefined) flagAveria_Mal15a = parseInt(dataMal.cambios.AW15a);
+        if (dataMal.cambios.AW15b !== undefined) flagAveria_Mal15b = parseInt(dataMal.cambios.AW15b); 
+        if (dataMal.cambios.AW18a !== undefined) flagAveria_Mal18a = parseInt(dataMal.cambios.AW18a);
+        if (dataMal.cambios.AW18b !== undefined) flagAveria_Mal18b = parseInt(dataMal.cambios.AW18b); 
+        if (dataMal.cambios.AW14a !== undefined) flagAveria_Mal14a = parseInt(dataMal.cambios.AW14a);
+        if (dataMal.cambios.AW14b !== undefined) flagAveria_Mal14b = parseInt(dataMal.cambios.AW14b); 
+        if (dataMal.cambios.AW11a !== undefined) flagAveria_Mal11a = parseInt(dataMal.cambios.AW11a);
+        if (dataMal.cambios.AW11b !== undefined) flagAveria_Mal11b = parseInt(dataMal.cambios.AW11b); 
+        if (dataMal.cambios.AW11c !== undefined) flagAveria_Mal11c = parseInt(dataMal.cambios.AW11c);
+        if (dataMal.cambios.AW11d !== undefined) flagAveria_Mal11d = parseInt(dataMal.cambios.AW11d); 
+        if (dataMal.cambios.AW12a !== undefined) flagAveria_Mal12a = parseInt(dataMal.cambios.AW12a);
+        if (dataMal.cambios.AW12b !== undefined) flagAveria_Mal12b = parseInt(dataMal.cambios.AW12b); 
+        if (dataMal.cambios.AW12c !== undefined) flagAveria_Mal12c = parseInt(dataMal.cambios.AW12c);
+        if (dataMal.cambios.AW12d !== undefined) flagAveria_Mal12d = parseInt(dataMal.cambios.AW12d); 
+        if (dataMal.cambios.AW32a !== undefined) flagAveria_Mal32a = parseInt(dataMal.cambios.AW32a);
+        if (dataMal.cambios.AW32b !== undefined) flagAveria_Mal32b = parseInt(dataMal.cambios.AW32b); 
+        if (dataMal.cambios.AW33a !== undefined) flagAveria_Mal33a = parseInt(dataMal.cambios.AW33a);
+        if (dataMal.cambios.AW33b !== undefined) flagAveria_Mal33b = parseInt(dataMal.cambios.AW33b);
+
+
+
+
+
+
+
+
+
+
+ }
+
+    // 4. Actualizar Tablero Superior y LEDs de Maldonado en tiempo real
+    if (typeof actualizarTableroMaldonado === 'function') {
+        actualizarTableroMaldonado();
     }
 
-    // 4. Gestión de LEDs de Avería en Panel Superior
-    let la23 = document.getElementById('AW23');
-    if (la23) la23.classList.toggle('l-red', flagAveria_Mal23 === 1);
+   var datosEncMal = dataMal.enclavamientos || dataMal;
+procesarEnclavamientosCambios(dataMal.enclavamientos);
 
-    let la21a = document.getElementById('AW21a');
-    if (la21a) la21a.classList.toggle('l-red', flagAveria_Mal21a === 1);
 
-    // 5. Enclavamientos y Tráfico
-    var datosEncMal = dataMal.enclavamientos || dataMal;
-    procesarEnclavamientosCambios(datosEncMal);
 
     if (dataMal.senales && typeof procesarBloqueSenales === 'function') {
         procesarBloqueSenales(dataMal.senales);
@@ -5000,6 +5300,12 @@ if (dataMal) {
         procesarDatosTrafico(dataMal.trafico, "EM");
     }
 }
+
+
+
+
+
+
 
 // --- LISTENER EN TIEMPO REAL PARA SECTOR RETIRO ---
 db.ref('cabinas/retiro').on('value', (snapshot) => {
@@ -5238,6 +5544,8 @@ pW();
     actualizarTableroIsidro();
     actualizarTableroVictoria();
    actualizarTableroSanFernando();
+actualizarTableroMaldonado();
+
 
 });  // FIN DE LA ESCUCHA FIREBASE GENERAL
 
