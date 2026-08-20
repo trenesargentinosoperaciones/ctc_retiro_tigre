@@ -299,7 +299,25 @@ transform: rotate(-270deg);
     user-select: none;
 }
 
-.status-box-mald {
+.status-box-ret {
+    position: absolute;
+    top: 780px; /* Ajustalo ligeramente para que quede justo arriba del azul */
+    left: 40px; 
+    width: 260px; /* El mismo ancho que tu panel azul o ajustado */
+    background-color: #FFD700; /* Amarillo Ferroviario */
+    border: 2px solid #000;
+    border-radius: 4px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    z-index: 100;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+
+.status-box-mal{
     position: absolute;
     top: 780px; /* Ajustalo ligeramente para que quede justo arriba del azul */
     left: 9440px; 
@@ -719,6 +737,27 @@ z-index: 9999 !important;
 
 <div class="map-container">
 
+<div class="status-box-ret">
+
+    <div class="status-header-text">RETIRO</div>
+    <div class="status-content">
+        <span id="indicadorRetiro" class="led-status"></span>
+        <span class="status-label">EN VIVO</span>
+    </div>
+</div>
+<div class="map-container">
+
+<div class="status-box-mal">
+
+    <div class="status-header-text">MALDONADO</div>
+    <div class="status-content">
+        <span id="indicadorempalme" class="led-status"></span>
+        <span class="status-label">EN VIVO</span>
+    </div>
+</div>
+
+
+
 <div class="status-container-sanmartin">
 
  <div class="status-row">
@@ -872,13 +911,7 @@ z-index: 9999 !important;
  <div id="AW33b" class="led-rd"></div><b>A</b></div>
  </div>
 
-<div class="status-box-mald">
-    <div class="status-header-text">MALDONADO</div>
-    <div class="status-content">
-        <span id="indicadorMaldonado" class="led-status"></span>
-        <span class="status-label">EN VIVO</span>
-    </div>
-</div>
+
 
 
 
@@ -1072,22 +1105,17 @@ z-index: 9999 !important;
 <div class="linea-limite linea-v" style="top: 1305px; left: 10050px; height: 160px;"></div>
 
 
-<div id="s63_base" class="senal-unificada f-rojo nombre-s-abajo" style="top: 970px; left: 8500px;"><div class="s-nombre-real">63</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 
 
 
 
-<div class="status-box-mald">
-    <div class="status-header-text">MALDONADO</div>
-    <div class="status-content">
-        <span id="indicadorMaldonado" class="led-status"></span>
-        <span class="status-label">EN VIVO</span>
-    </div>
-</div>
+
+
 <div class="cd-via-panelEM"><div><div id="led-CDV1_EM" class="led-10mm"></div>CDV1</div><div><div id="led-CDV2_EM" class="led-10mm"></div>CDV2</div><div><div id="led-RF_EM" class="led-10mm"></div>R.F</div><div><div id="led-RU_EM" class="led-10mm"></div>R.U</div></div>
 
 <div class="estacion" style="top: 940px; left: 9440px;">EMPALME MALDONADO</div>
+<div class="estacion" style="top: 860px; left: 110px;">RETIRO</div>
 
 
 
@@ -1232,66 +1260,87 @@ z-index: 9999 !important;
 
 <div id="s62_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1075px; left: 8905px;"><div class="s-nombre-real">62</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s63_base" class="senal-unificada f-rojo nombre-s-abajo" style="top: 970px; left: 8500px;"><div class="s-nombre-real">63</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s63_base" class="senal-unificada f-rojo nombre-s-abajo" style="top: 975px; left: 8500px;"><div class="s-nombre-real">63</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s51_base" class="senal-unificada f-rojo" style="top: 1005px; left: 7950px;"><div class="s-nombre-real">51</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s51_base" class="senal-unificada f-rojo" style="top: 1000px; left: 7950px;"><div class="s-nombre-real">51</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s55_base" class="senal-unificada f-rojo" style="top: 1005px; left: 8150px;"><div class="s-nombre-real">55</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s55_base" class="senal-unificada f-rojo" style="top: 1000px; left: 8150px;"><div class="s-nombre-real">55</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s61_base" class="senal-unificada f-rojo" style="top: 1005px; left: 8370px;"><div class="s-nombre-real">61</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s61_base" class="senal-unificada f-rojo" style="top: 1000px; left: 8370px;"><div class="s-nombre-real">61</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s71_base" class="senal-unificada f-rojo" style="top: 1005px; left: 9150px;"><div class="s-nombre-real">71</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s71_base" class="senal-unificada f-rojo" style="top: 1000px; left: 9150px;"><div class="s-nombre-real">71</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s65_base" class="senal-unificada f-rojo" style="top: 1305px; left: 9150px;"><div class="s-nombre-real">65</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s65_base" class="senal-unificada f-rojo" style="top: 1300px; left: 9150px;"><div class="s-nombre-real">65</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 <div id="s69_base" class="senal-unificada f-rojo" style="top: 1170px; left: 8450px;"><div class="s-nombre-real">69</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s79_base" class="senal-unificada f-rojo" style="top: 1005px; left: 10250px;"><div class="s-nombre-real">79</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s79_base" class="senal-unificada f-rojo" style="top: 1000px; left: 10250px;"><div class="s-nombre-real">79</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="sPA29_base" class="senal-unificada f-rojo" style="top: 1005px; left: 10450px;"><div class="s-nombre-real">SPA29</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sPA29_base" class="senal-unificada f-rojo" style="top: 1000px; left: 10450px;"><div class="s-nombre-real">SPA29</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s54_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1175px; left: 8115px;"><div class="s-nombre-real">54</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s54_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1170px; left: 8115px;"><div class="s-nombre-real">54</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s58_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1175px; left: 8555px;"><div class="s-nombre-real">58</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s58_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1170px; left: 8555px;"><div class="s-nombre-real">58</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s60_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1175px; left: 8905px;"><div class="s-nombre-real">60</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s60_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1170px; left: 8905px;"><div class="s-nombre-real">60</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s72_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1175px; left: 9225px;"><div class="s-nombre-real">72</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s72_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1170px; left: 9225px;"><div class="s-nombre-real">72</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s74_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1075px; left: 9225px;"><div class="s-nombre-real">74</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s74_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1070px; left: 9225px;"><div class="s-nombre-real">74</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s78_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1175px; left: 10370px;"><div class="s-nombre-real">78</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s78_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1170px; left: 10370px;"><div class="s-nombre-real">78</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="sPD32_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1175px; left: 10510px;"><div class="s-nombre-real">SPD32</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sPD32_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1170px; left: 10510px;"><div class="s-nombre-real">SPD32</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s49_base" class="senal-unificada f-rojo" style="top: 1205px; left: 7950px;"><div class="s-nombre-real">49</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s49_base" class="senal-unificada f-rojo" style="top: 1195px; left: 7950px;"><div class="s-nombre-real">49</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s53_base" class="senal-unificada f-rojo" style="top: 1205px; left: 8150px;"><div class="s-nombre-real">53</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s53_base" class="senal-unificada f-rojo" style="top: 1195px; left: 8150px;"><div class="s-nombre-real">53</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s57_base" class="senal-unificada f-rojo" style="top: 1205px; left: 8590px;"><div class="s-nombre-real">57</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s57_base" class="senal-unificada f-rojo" style="top: 1195px; left: 8590px;"><div class="s-nombre-real">57</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s67_base" class="senal-unificada f-rojo" style="top: 1205px; left: 9150px;"><div class="s-nombre-real">67</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s67_base" class="senal-unificada f-rojo" style="top: 1195px; left: 9150px;"><div class="s-nombre-real">67</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s77_base" class="senal-unificada f-rojo" style="top: 1205px; left: 10330px;"><div class="s-nombre-real">77</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s77_base" class="senal-unificada f-rojo" style="top: 1195px; left: 10330px;"><div class="s-nombre-real">77</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 
-<div id="s52_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 8115px;"><div class="s-nombre-real">52</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s52_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 8115px;"><div class="s-nombre-real">52</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s56_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 8315px;"><div class="s-nombre-real">56</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s56_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 8315px;"><div class="s-nombre-real">56</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s64_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 9075px;"><div class="s-nombre-real">64</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s64_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 9075px;"><div class="s-nombre-real">64</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s68_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 10015px;"><div class="s-nombre-real">68</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s68_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 10015px;"><div class="s-nombre-real">68</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s76_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 10215px;"><div class="s-nombre-real">76</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s76_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 10215px;"><div class="s-nombre-real">76</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 <div style="position: absolute; top: 848px; left: 7365px; text-align: center;"><div id="EW23a" class="led-enclav enclav-cambio"></div></div>
 <div style="position: absolute; top: 848px; left: 7875px; text-align: center;"><div id="EW21a" class="led-enclav enclav-cambio"></div></div>
 <div style="position: absolute; top: 948px; left: 7975px; text-align: center;"><div id="EW21b" class="led-enclav enclav-cambio"></div></div>
-<div style="position: absolute; top: 948px; left: 8550px; text-align: center;"><div id="EW33a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 948px; left: 8550px; text-align: center;"><div id="EW32a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1048px; left: 8650px; text-align: center;"><div id="EW32b" class="led-enclav enclav-cambio"></div></div>
+
+<div style="position: absolute; top: 1048px; left: 8760px; text-align: center;"><div id="EW33a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1148px; left: 8860px; text-align: center;"><div id="EW33b" class="led-enclav enclav-cambio"></div></div>
+
+<div style="position: absolute; top: 1048px; left: 9475px; text-align: center;"><div id="EW18b" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1148px; left: 9365px; text-align: center;"><div id="EW18a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1148px; left: 9385px; text-align: center;"><div id="EW19b" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1148px; left: 9525px; text-align: center;"><div id="EW14b" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1248px; left: 9415px; text-align: center;"><div id="EW14a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1248px; left: 9275px; text-align: center;"><div id="EW19a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1248px; left: 9435px; text-align: center;"><div id="EW15b" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1348px; left: 9325px; text-align: center;"><div id="EW15a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1148px; left: 9610px; text-align: center;"><div id="EW12a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1148px; left: 9750px; text-align: center;"><div id="EW11c" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1148px; left: 9770px; text-align: center;"><div id="EW11d" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1248px; left: 9860px; text-align: center;"><div id="EW11b" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1248px; left: 9700px; text-align: center;"><div id="EW12c" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1248px; left: 9720px; text-align: center;"><div id="EW12d" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1348px; left: 9815px; text-align: center;"><div id="EW12b" class="led-enclav enclav-cambio"></div></div>
 
 
 
+<div style="position: absolute; top: 1048px; left: 9660px; text-align: center;"><div id="EW11a" class="led-enclav enclav-cambio"></div></div>
 
 
 
@@ -1362,22 +1411,22 @@ z-index: 9999 !important;
     <div id="c114" class="via v-abajo" data-nombre="CDV114" style="top: 1350px; left: 11665px; width: 130px;"></div>
     <div id="c116" class="via v-abajo" data-nombre="CDV116" style="top: 1350px; left: 11800px; width: 145px;"></div>
 
-    <div id="s101_base" class="senal-unificada f-rojo" style="top: 1180px; left: 10650px;"><div class="s-nombre-real">101</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s103_base" class="senal-unificada f-rojo" style="top: 1180px; left: 10750px;"><div class="s-nombre-real">103</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s105_base" class="senal-unificada f-rojo" style="top: 1180px; left: 10950px;"><div class="s-nombre-real">105</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s107_base" class="senal-unificada f-rojo" style="top: 1180px; left: 11050px;"><div class="s-nombre-real">107</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="sA-BEL_base" class="senal-unificada f-rojo" style="top: 1180px; left: 11195px;"><div class="s-nombre-real">A-BEL</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="sB-BEL_base" class="senal-unificada f-rojo" style="top: 1180px; left: 11400px;"><div class="s-nombre-real">B-BEL</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s113_base" class="senal-unificada f-rojo" style="top: 1180px; left: 11745px;"><div class="s-nombre-real">113</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s101_base" class="senal-unificada f-rojo" style="top: 1195px; left: 10650px;"><div class="s-nombre-real">101</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s103_base" class="senal-unificada f-rojo" style="top: 1195px; left: 10750px;"><div class="s-nombre-real">103</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s105_base" class="senal-unificada f-rojo" style="top: 1195px; left: 10950px;"><div class="s-nombre-real">105</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s107_base" class="senal-unificada f-rojo" style="top: 1195px; left: 11050px;"><div class="s-nombre-real">107</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="sA-BEL_base" class="senal-unificada f-rojo" style="top: 1195px; left: 11195px;"><div class="s-nombre-real">A-BEL</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="sB-BEL_base" class="senal-unificada f-rojo" style="top: 1195px; left: 11400px;"><div class="s-nombre-real">B-BEL</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s113_base" class="senal-unificada f-rojo" style="top: 1195px; left: 11745px;"><div class="s-nombre-real">113</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
         
-    <div id="s102_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 10620px;"><div class="s-nombre-real">102</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s104_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 10710px;"><div class="s-nombre-real">104</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s106_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 10910px;"><div class="s-nombre-real">106</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s108_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 11060px;"><div class="s-nombre-real">108</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="sY-BEL_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 11180px;"><div class="s-nombre-real">Y-BEL</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="sZ-BEL_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 11630px;"><div class="s-nombre-real">Z-BEL</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s114_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 11765px;"><div class="s-nombre-real">114</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s102_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 10620px;"><div class="s-nombre-real">102</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s104_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 10710px;"><div class="s-nombre-real">104</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s106_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 10910px;"><div class="s-nombre-real">106</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s108_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 11060px;"><div class="s-nombre-real">108</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="sY-BEL_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 11180px;"><div class="s-nombre-real">Y-BEL</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="sZ-BEL_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 11630px;"><div class="s-nombre-real">Z-BEL</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s114_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 11765px;"><div class="s-nombre-real">114</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
     
 <div id="s2a_base" class="senal-unificada f-rojo enana" style="top: 1315px; left: 11400px;">
   <div class="s-nombre-real">2A</div>
@@ -1401,10 +1450,10 @@ z-index: 9999 !important;
 <div style="position: absolute; top: 1248px; left: 11525px; text-align: center;"><div id="EW1" class="led-enclav enclav-cambio"></div></div>
 <div style="position: absolute; top: 1347px; left: 11438px; text-align: center;"><div id="EW2" class="led-enclav enclav-cambio"></div></div>
 
-<div style="position: absolute; top: 1197px; left: 11175px; text-align: center;"><div id="ESAB" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1197px; left: 11380px; text-align: center;"><div id="ESBB" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1395px; left: 11670px; text-align: center;"><div id="ESZB" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1395px; left: 11220px; text-align: center;"><div id="ESYB" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1212px; left: 11175px; text-align: center;"><div id="ESAB" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1212px; left: 11380px; text-align: center;"><div id="ESBB" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1380px; left: 11670px; text-align: center;"><div id="ESZB" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1380px; left: 11220px; text-align: center;"><div id="ESYB" class="led-enclav enclav-senal"></div></div>
 
 <div class="linea-limite linea-v" style="top: 1220px; left: 12050px; height: 85px;"></div>
 <div class="linea-limite linea-h" style="top: 1305px; left: 11945px; width: 105px;"></div>
@@ -1476,13 +1525,13 @@ z-index: 9999 !important;
 <div id="c128" class="via v-abajo" data-nombre="CDV128" style="top: 1350px; left: 13050px; width: 145px;"></div>
 <div id="c130" class="via v-abajo" data-nombre="CDV130" style="top: 1350px; left: 13200px; width: 100px;"></div>
 
-<div id="s115_base" class="senal-unificada f-rojo" style="top: 1180px; left: 11950px;"><div class="s-nombre-real">115</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sA-NUN_base" class="senal-unificada f-rojo" style="top: 1180px; left: 12050px;"><div class="s-nombre-real">A-NUN</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sB-NUN_base" class="senal-unificada f-rojo" style="top: 1180px; left: 12470px;"><div class="s-nombre-real">B-NUN</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s121_base" class="senal-unificada f-rojo" style="top: 1180px; left: 12700px;"><div class="s-nombre-real">121</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sA-RIV_base" class="senal-unificada f-rojo" style="top: 1180px; left: 12790px;"><div class="s-nombre-real">A-RIV</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s125_base" class="senal-unificada f-rojo" style="top: 1180px; left: 13040px;"><div class="s-nombre-real">125</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s127_base" class="senal-unificada f-rojo" style="top: 1180px; left: 13190px;"><div class="s-nombre-real">127</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s115_base" class="senal-unificada f-rojo" style="top: 1195px; left: 11950px;"><div class="s-nombre-real">115</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sA-NUN_base" class="senal-unificada f-rojo" style="top: 1195px; left: 12050px;"><div class="s-nombre-real">A-NUN</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sB-NUN_base" class="senal-unificada f-rojo" style="top: 1195px; left: 12470px;"><div class="s-nombre-real">B-NUN</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s121_base" class="senal-unificada f-rojo" style="top: 1195px; left: 12700px;"><div class="s-nombre-real">121</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sA-RIV_base" class="senal-unificada f-rojo" style="top: 1195px; left: 12790px;"><div class="s-nombre-real">A-RIV</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s125_base" class="senal-unificada f-rojo" style="top: 1195px; left: 13040px;"><div class="s-nombre-real">125</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s127_base" class="senal-unificada f-rojo" style="top: 1195px; left: 13190px;"><div class="s-nombre-real">127</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 
 
@@ -1492,13 +1541,13 @@ z-index: 9999 !important;
 
 
 
-<div id="s116_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 11910px;"><div class="s-nombre-real">116</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sY-NUN_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 12190px;"><div class="s-nombre-real">Y-NUN</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sZ-NUN_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 12565px;"><div class="s-nombre-real">Z-NUN</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s122_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 12635px;"><div class="s-nombre-real">122</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sZ-RIV_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 12822px;"><div class="s-nombre-real">Z-RIV</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s126_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 13015px;"><div class="s-nombre-real">126</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s128_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 13165px;"><div class="s-nombre-real">128</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s116_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 11910px;"><div class="s-nombre-real">116</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sY-NUN_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 12190px;"><div class="s-nombre-real">Y-NUN</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sZ-NUN_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 12565px;"><div class="s-nombre-real">Z-NUN</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s122_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 12635px;"><div class="s-nombre-real">122</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sZ-RIV_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 12822px;"><div class="s-nombre-real">Z-RIV</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s126_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 13015px;"><div class="s-nombre-real">126</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s128_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 13165px;"><div class="s-nombre-real">128</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 <div id="s12a_base" class="senal-unificada f-rojo enana" style="top: 1315px; left: 12425px;"><div class="s-nombre-real">12A</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="curva-led"></div></div></div>
 
@@ -1529,12 +1578,12 @@ z-index: 9999 !important;
 <div style="position: absolute; top: 1248px; left: 12855px; text-align: center;"><div id="EW123" class="led-enclav enclav-cambio"></div></div>
 <div style="position: absolute; top: 1347px; left: 12762px; text-align: center;"><div id="EW124" class="led-enclav enclav-cambio"></div></div>
 
-<div style="position: absolute; top: 1197px; left: 12030px; text-align: center;"><div id="ESAN" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1197px; left: 12450px; text-align: center;"><div id="ESBN" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1395px; left: 12230px; text-align: center;"><div id="ESYN" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1395px; left: 12605px; text-align: center;"><div id="ESZN" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1197px; left: 12770px; text-align: center;"><div id="ESAR" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1395px; left: 12862px; text-align: center;"><div id="ESZR" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1212px; left: 12030px; text-align: center;"><div id="ESAN" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1212px; left: 12450px; text-align: center;"><div id="ESBN" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1380px; left: 12230px; text-align: center;"><div id="ESYN" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1380px; left: 12605px; text-align: center;"><div id="ESZN" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1212px; left: 12770px; text-align: center;"><div id="ESAR" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1380px; left: 12862px; text-align: center;"><div id="ESZR" class="led-enclav enclav-senal"></div></div>
 
   <div class="pan-etiqueta" style="top: 1130px; left: 12770px;">RAMALLO</div><div class="pan-rect" style="top: 1050px; left: 12750px;"></div>
     <div class="ind-pan-container" style="top: 1460px; left: 12750px;"><div id="B_RAM_A" class="ind-alto"></div><div id="B_RAM_B" class="ind-bajo"></div></div>
@@ -1626,28 +1675,28 @@ z-index: 9999 !important;
 <div id="c148" class="via v-abajo" data-nombre="CDV148" style="top: 1350px; left: 14730px; width: 85px;"></div>
 <div id="c150" class="via v-abajo" data-nombre="CDV150" style="top: 1350px; left: 14820px; width: 90px;"></div>
 
-<div id="s129_base" class="senal-unificada f-rojo" style="top: 1180px; left: 13280px;"><div class="s-nombre-real">129</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sA-LOP_base" class="senal-unificada f-rojo" style="top: 1180px; left: 13460px;"><div class="s-nombre-real">A-LOP</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s133_base" class="senal-unificada f-rojo" style="top: 1180px; left: 13648px;"><div class="s-nombre-real">133</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s135_base" class="senal-unificada f-rojo" style="top: 1180px; left: 13728px;"><div class="s-nombre-real">135</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sA-OLI_base" class="senal-unificada f-rojo" style="top: 1180px; left: 13830px;"><div class="s-nombre-real">A-OLI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sB-OLI_base" class="senal-unificada f-rojo" style="top: 1180px; left: 14195px;"><div class="s-nombre-real">B-OLI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s141_base" class="senal-unificada f-rojo" style="top: 1180px; left: 14455px;"><div class="s-nombre-real">141</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s143_base" class="senal-unificada f-rojo" style="top: 1180px; left: 14525px;"><div class="s-nombre-real">143</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s145_base" class="senal-unificada f-rojo" style="top: 1180px; left: 14715px;"><div class="s-nombre-real">145</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s147_base" class="senal-unificada f-rojo" style="top: 1180px; left: 14800px;"><div class="s-nombre-real">147</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s149_base" class="senal-unificada f-rojo" style="top: 1180px; left: 14880px;"><div class="s-nombre-real">149</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s129_base" class="senal-unificada f-rojo" style="top: 1195px; left: 13280px;"><div class="s-nombre-real">129</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sA-LOP_base" class="senal-unificada f-rojo" style="top: 1195px; left: 13460px;"><div class="s-nombre-real">A-LOP</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s133_base" class="senal-unificada f-rojo" style="top: 1195px; left: 13648px;"><div class="s-nombre-real">133</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s135_base" class="senal-unificada f-rojo" style="top: 1195px; left: 13728px;"><div class="s-nombre-real">135</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sA-OLI_base" class="senal-unificada f-rojo" style="top: 1195px; left: 13830px;"><div class="s-nombre-real">A-OLI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sB-OLI_base" class="senal-unificada f-rojo" style="top: 1195px; left: 14195px;"><div class="s-nombre-real">B-OLI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s141_base" class="senal-unificada f-rojo" style="top: 1195px; left: 14455px;"><div class="s-nombre-real">141</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s143_base" class="senal-unificada f-rojo" style="top: 1195px; left: 14525px;"><div class="s-nombre-real">143</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s145_base" class="senal-unificada f-rojo" style="top: 1195px; left: 14715px;"><div class="s-nombre-real">145</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s147_base" class="senal-unificada f-rojo" style="top: 1195px; left: 14800px;"><div class="s-nombre-real">147</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s149_base" class="senal-unificada f-rojo" style="top: 1195px; left: 14880px;"><div class="s-nombre-real">149</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s130_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 13265px;"><div class="s-nombre-real">130</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sZ-LOP_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 13545px;"><div class="s-nombre-real">Z-LOP</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s134_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 13640px;"><div class="s-nombre-real">134</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s136_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 13735px;"><div class="s-nombre-real">136</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sY-OLI_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 13945px;"><div class="s-nombre-real">Y-OLI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sZ-OLI_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 14340px;"><div class="s-nombre-real">Z-OLI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s142_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 14465px;"><div class="s-nombre-real">142</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s144_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 14525px;"><div class="s-nombre-real">144</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s146_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 14690px;"><div class="s-nombre-real">146</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s148_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 14780px;"><div class="s-nombre-real">148</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s130_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 13265px;"><div class="s-nombre-real">130</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sZ-LOP_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 13545px;"><div class="s-nombre-real">Z-LOP</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s134_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 13640px;"><div class="s-nombre-real">134</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s136_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 13735px;"><div class="s-nombre-real">136</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sY-OLI_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 13945px;"><div class="s-nombre-real">Y-OLI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sZ-OLI_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 14340px;"><div class="s-nombre-real">Z-OLI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s142_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 14465px;"><div class="s-nombre-real">142</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s144_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 14525px;"><div class="s-nombre-real">144</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s146_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 14690px;"><div class="s-nombre-real">146</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s148_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 14780px;"><div class="s-nombre-real">148</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 <div id="s21a_base" class="senal-unificada f-rojo nombre-s-abajo enana" style="top: 1265px; left: 14010px;">
 <div class="s-nombre-real">21A</div>
@@ -1664,10 +1713,10 @@ z-index: 9999 !important;
 <div id="s24a_base" class="senal-unificada f-rojo enana" style="top: 1315px; left: 14190px;">
 <div class="s-nombre-real">24A</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="curva-led"></div></div></div>
 
-<div style="position: absolute; top: 1197px; left: 13812px; text-align: center;"><div id="ESAO" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1197px; left: 14175px; text-align: center;"><div id="ESBO" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1395px; left: 14380px; text-align: center;"><div id="ESZO" class="led-enclav enclav-senal"></div></div>
-<div style="position: absolute; top: 1395px; left: 13985px; text-align: center;"><div id="ESYO" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1212px; left: 13812px; text-align: center;"><div id="ESAO" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1212px; left: 14175px; text-align: center;"><div id="ESBO" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1380px; left: 14380px; text-align: center;"><div id="ESZO" class="led-enclav enclav-senal"></div></div>
+<div style="position: absolute; top: 1380px; left: 13985px; text-align: center;"><div id="ESYO" class="led-enclav enclav-senal"></div></div>
 
 <div style="position: absolute; top: 1347px; left: 13438px; text-align: center;"><div id="EW132" class="led-enclav enclav-cambio"></div></div>
 <div style="position: absolute; top: 1248px; left: 13530px; text-align: center;"><div id="EW131" class="led-enclav enclav-cambio"></div></div>
@@ -2251,36 +2300,36 @@ z-index: 9999 !important;
 <div class="pan-etiqueta" style="top: 1105px; left: 20130px;">MARABOTTO</div><div class="pan-rect" style="top: 1050px; left: 20110px;"></div>
     <div class="ind-pan-container" style="top: 1460px; left: 20110px;"><div id="B_MAR_A" class="ind-alto active"></div><div id="B_MAR_B" class="ind-bajo"></div></div>
 
-<div id="sA-MAR_base" class="senal-unificada f-rojo" style="top: 1180px; left: 15070px;"><div class="s-nombre-real">A-MAR</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s153_base" class="senal-unificada f-rojo" style="top: 1180px; left: 15215px;"><div class="s-nombre-real">153</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s155_base" class="senal-unificada f-rojo" style="top: 1180px; left: 15340px;"><div class="s-nombre-real">155</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s157_base" class="senal-unificada f-rojo" style="top: 1180px; left: 15530px;"><div class="s-nombre-real">157</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s159_base" class="senal-unificada f-rojo" style="top: 1180px; left: 15620px;"><div class="s-nombre-real">159</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="sA-ISI_base" class="senal-unificada f-rojo" style="top: 1180px; left: 15750px;"><div class="s-nombre-real">A-ISI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="sB-ISI_base" class="senal-unificada f-rojo" style="top: 1180px; left: 16125px;"><div class="s-nombre-real">B-ISI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s165_base" class="senal-unificada f-rojo" style="top: 1180px; left: 16350px;"><div class="s-nombre-real">165</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s167_base" class="senal-unificada f-rojo" style="top: 1180px; left: 16430px;"><div class="s-nombre-real">167</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s169_base" class="senal-unificada f-rojo" style="top: 1180px; left: 16550px;"><div class="s-nombre-real">169</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s171_base" class="senal-unificada f-rojo" style="top: 1180px; left: 16770px;"><div class="s-nombre-real">171</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s173_base" class="senal-unificada f-rojo" style="top: 1180px; left: 16840px;"><div class="s-nombre-real">173</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-   <div id="sA-VIC_base" class="senal-unificada f-rojo" style="top: 1180px; left: 16940px;"><div class="s-nombre-real">A-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sB-VIC_base" class="senal-unificada f-rojo" style="top: 1180px; left: 17710px;"><div class="s-nombre-real">B-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s179_base" class="senal-unificada f-rojo" style="top: 1180px; left: 18620px;"><div class="s-nombre-real">179</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s181_base" class="senal-unificada f-rojo" style="top: 1180px; left: 18870px;"><div class="s-nombre-real">181</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sA-FER_base" class="senal-unificada f-rojo" style="top: 1180px; left: 19055px;"><div class="s-nombre-real">A-FER</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="sB-FER_base" class="senal-unificada f-rojo" style="top: 1180px; left: 19475px;"><div class="s-nombre-real">B-FER</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s187_base" class="senal-unificada f-rojo" style="top: 1180px; left: 19705px;"><div class="s-nombre-real">187</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-<div id="s189_base" class="senal-unificada f-rojo" style="top: 1180px; left: 19925px;"><div class="s-nombre-real">189</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sA-MAR_base" class="senal-unificada f-rojo" style="top: 1195px; left: 15070px;"><div class="s-nombre-real">A-MAR</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s153_base" class="senal-unificada f-rojo" style="top: 1195px; left: 15215px;"><div class="s-nombre-real">153</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s155_base" class="senal-unificada f-rojo" style="top: 1195px; left: 15340px;"><div class="s-nombre-real">155</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s157_base" class="senal-unificada f-rojo" style="top: 1195px; left: 15530px;"><div class="s-nombre-real">157</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s159_base" class="senal-unificada f-rojo" style="top: 1195px; left: 15620px;"><div class="s-nombre-real">159</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="sA-ISI_base" class="senal-unificada f-rojo" style="top: 1195px; left: 15750px;"><div class="s-nombre-real">A-ISI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="sB-ISI_base" class="senal-unificada f-rojo" style="top: 1195px; left: 16125px;"><div class="s-nombre-real">B-ISI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s165_base" class="senal-unificada f-rojo" style="top: 1195px; left: 16350px;"><div class="s-nombre-real">165</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s167_base" class="senal-unificada f-rojo" style="top: 1195px; left: 16430px;"><div class="s-nombre-real">167</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s169_base" class="senal-unificada f-rojo" style="top: 1195px; left: 16550px;"><div class="s-nombre-real">169</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s171_base" class="senal-unificada f-rojo" style="top: 1195px; left: 16770px;"><div class="s-nombre-real">171</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s173_base" class="senal-unificada f-rojo" style="top: 1195px; left: 16840px;"><div class="s-nombre-real">173</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+   <div id="sA-VIC_base" class="senal-unificada f-rojo" style="top: 1195px; left: 16940px;"><div class="s-nombre-real">A-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sB-VIC_base" class="senal-unificada f-rojo" style="top: 1195px; left: 17710px;"><div class="s-nombre-real">B-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s179_base" class="senal-unificada f-rojo" style="top: 1195px; left: 18620px;"><div class="s-nombre-real">179</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s181_base" class="senal-unificada f-rojo" style="top: 1195px; left: 18870px;"><div class="s-nombre-real">181</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sA-FER_base" class="senal-unificada f-rojo" style="top: 1195px; left: 19055px;"><div class="s-nombre-real">A-FER</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sB-FER_base" class="senal-unificada f-rojo" style="top: 1195px; left: 19475px;"><div class="s-nombre-real">B-FER</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s187_base" class="senal-unificada f-rojo" style="top: 1195px; left: 19705px;"><div class="s-nombre-real">187</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s189_base" class="senal-unificada f-rojo" style="top: 1195px; left: 19925px;"><div class="s-nombre-real">189</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s191_base" class="senal-unificada f-rojo" style="top: 1180px; left: 20040px;"><div class="s-nombre-real">191</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s191_base" class="senal-unificada f-rojo" style="top: 1195px; left: 20040px;"><div class="s-nombre-real">191</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="sA1-TIG_base" class="senal-unificada f-rojo" style="top: 1180px; left: 20290px;"><div class="s-nombre-real">A1-TIG</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sA1-TIG_base" class="senal-unificada f-rojo" style="top: 1195px; left: 20290px;"><div class="s-nombre-real">A1-TIG</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s192_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 20050px;"><div class="s-nombre-real">192</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s192_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 20050px;"><div class="s-nombre-real">192</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s194_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 20275px;"><div class="s-nombre-real">194</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s194_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 20275px;"><div class="s-nombre-real">194</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="sA-TIG_base" class="senal-unificada f-rojo" style="top: 1180px; left: 20515px;"><div class="s-nombre-real">A-TIG</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sA-TIG_base" class="senal-unificada f-rojo" style="top: 1195px; left: 20515px;"><div class="s-nombre-real">A-TIG</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 <div id="sZ1-TIG_base" class="senal-unificada f-rojo sentido-izq nombre-s-arriba" style="top: 1205px; left: 21220px;"><div class="s-nombre-real">Z1-TIG</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
@@ -2290,11 +2339,11 @@ z-index: 9999 !important;
 
 <div id="sZ4-TIG_base" class="senal-unificada f-rojo sentido-izq nombre-s-arriba" style="top: 1505px; left: 21220px;"><div class="s-nombre-real">Z4-TIG</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="sC-VIC_base" class="senal-unificada f-rojo" style="top: 580px; left: 17715px;"><div class="s-nombre-real">C-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sC-VIC_base" class="senal-unificada f-rojo" style="top: 595px; left: 17715px;"><div class="s-nombre-real">C-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="sD-VIC_base" class="senal-unificada f-rojo" style="top: 580px; left: 18220px;"><div class="s-nombre-real">D-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sD-VIC_base" class="senal-unificada f-rojo" style="top: 595px; left: 18220px;"><div class="s-nombre-real">D-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="sE-VIC_base" class="senal-unificada f-rojo" style="top: 580px; left: 18885px;"><div class="s-nombre-real">E-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sE-VIC_base" class="senal-unificada f-rojo" style="top: 595px; left: 18885px;"><div class="s-nombre-real">E-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 <div id="sT-VIC_base" class="senal-unificada f-rojo sentido-izq nombre-s-arriba" style="top: 930px; left: 17155px;transform: rotate(-90deg);"><div class="s-nombre-real">T-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
@@ -2306,34 +2355,34 @@ z-index: 9999 !important;
 
  <div id="sX-VIC_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 770px; left: 18955px;"><div class="s-nombre-real">X-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div> 
 
-<div id="s150_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 14880px;"><div class="s-nombre-real">150</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="sZ-MAR_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 15125px;"><div class="s-nombre-real">Z-MAR</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s154_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 15240px;"><div class="s-nombre-real">154</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s156_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 15340px;"><div class="s-nombre-real">156</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s158_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 15520px;"><div class="s-nombre-real">158</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s160_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 15625px;"><div class="s-nombre-real">160</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="sW-ISI_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 15835px;"><div class="s-nombre-real">W-ISI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="sX-ISI_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 16248px;"><div class="s-nombre-real">X-ISI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s166_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 16355px;"><div class="s-nombre-real">166</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s168_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 16490px;"><div class="s-nombre-real">168</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s170_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 16555px;"><div class="s-nombre-real">170</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s172_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 16755px;"><div class="s-nombre-real">172</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="s174_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 16820px;"><div class="s-nombre-real">174</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
-    <div id="sY-VIC_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 17445px;"><div class="s-nombre-real">Y-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s150_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 14880px;"><div class="s-nombre-real">150</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="sZ-MAR_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 15125px;"><div class="s-nombre-real">Z-MAR</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s154_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 15240px;"><div class="s-nombre-real">154</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s156_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 15340px;"><div class="s-nombre-real">156</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s158_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 15520px;"><div class="s-nombre-real">158</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s160_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 15625px;"><div class="s-nombre-real">160</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="sW-ISI_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 15835px;"><div class="s-nombre-real">W-ISI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="sX-ISI_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 16248px;"><div class="s-nombre-real">X-ISI</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s166_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 16355px;"><div class="s-nombre-real">166</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s168_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 16490px;"><div class="s-nombre-real">168</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s170_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 16555px;"><div class="s-nombre-real">170</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s172_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 16755px;"><div class="s-nombre-real">172</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="s174_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 16820px;"><div class="s-nombre-real">174</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+    <div id="sY-VIC_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 17445px;"><div class="s-nombre-real">Y-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="sZ-VIC_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 18410px;"><div class="s-nombre-real">Z-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sZ-VIC_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 18410px;"><div class="s-nombre-real">Z-VIC</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s180_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 18645px;"><div class="s-nombre-real">180</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s180_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 18645px;"><div class="s-nombre-real">180</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s182_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 18950px;"><div class="s-nombre-real">182</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s182_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 18950px;"><div class="s-nombre-real">182</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="sY-FER_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 19210px;"><div class="s-nombre-real">Y-FER</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sY-FER_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 19210px;"><div class="s-nombre-real">Y-FER</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="sZ-FER_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 19600px;"><div class="s-nombre-real">Z-FER</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sZ-FER_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 19600px;"><div class="s-nombre-real">Z-FER</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s188_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 19700px;"><div class="s-nombre-real">188</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s188_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 19700px;"><div class="s-nombre-real">188</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s190_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1385px; left: 19925px;"><div class="s-nombre-real">190</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s190_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 19925px;"><div class="s-nombre-real">190</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 <div id="s31a_base" class="senal-unificada f-rojo nombre-s-abajo enana" style="top: 1265px; left: 15900px;">
 <div class="s-nombre-real">31A</div>
@@ -2564,13 +2613,13 @@ z-index: 9999 !important;
 </div>
 </div>
 
-<div style="position: absolute; top: 1197px; left: 15730px; text-align: center;"><div class="label-enc"></div><div id="ESAI" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1212px; left: 15730px; text-align: center;"><div class="label-enc"></div><div id="ESAI" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 1197px; left: 16102px; text-align: center;"><div class="label-enc"></div><div id="ESBI" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1212px; left: 16102px; text-align: center;"><div class="label-enc"></div><div id="ESBI" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 1395px; left: 16288px; text-align: center;"><div class="label-enc"></div><div id="ESXI" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1380px; left: 16288px; text-align: center;"><div class="label-enc"></div><div id="ESXI" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 1395px; left: 15875px; text-align: center;"><div class="label-enc"></div><div id="ESWI" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1380px; left: 15875px; text-align: center;"><div class="label-enc"></div><div id="ESWI" class="led-enclav"></div></div>
 
 <div style="position: absolute; top: 1348px; left: 15050px; text-align: center;"><div id="EW152m" class="led-enclav enclav-cambio"></div></div>
 
@@ -2652,20 +2701,20 @@ z-index: 9999 !important;
 
 
 
-<div style="position: absolute; top: 1197px; left: 16920px; text-align: center;"><div class="label-enc"></div><div id="ESAV" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1212px; left: 16920px; text-align: center;"><div class="label-enc"></div><div id="ESAV" class="led-enclav"></div></div>
 
 
-<div style="position: absolute; top: 1197px; left: 17690px; text-align: center;"><div class="label-enc"></div><div id="ESBV" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1212px; left: 17690px; text-align: center;"><div class="label-enc"></div><div id="ESBV" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 1395px; left: 18452px; text-align: center;"><div class="label-enc"></div><div id="ESZV" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1380px; left: 18452px; text-align: center;"><div class="label-enc"></div><div id="ESZV" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 1395px; left: 17487px; text-align: center;"><div class="label-enc"></div><div id="ESYV" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1380px; left: 17487px; text-align: center;"><div class="label-enc"></div><div id="ESYV" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 595px; left: 17695px; text-align: center;"><div class="label-enc"></div><div id="ESCV" class="led-enclav"></div></div>
+<div style="position: absolute; top: 610px; left: 17695px; text-align: center;"><div class="label-enc"></div><div id="ESCV" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 595px; left: 18200px; text-align: center;"><div class="label-enc"></div><div id="ESDV" class="led-enclav"></div></div>
+<div style="position: absolute; top: 610px; left: 18200px; text-align: center;"><div class="label-enc"></div><div id="ESDV" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 595px; left: 18865px; text-align: center;"><div class="label-enc"></div><div id="ESEV" class="led-enclav"></div></div>
+<div style="position: absolute; top: 610px; left: 18865px; text-align: center;"><div class="label-enc"></div><div id="ESEV" class="led-enclav"></div></div>
 
 
 <div style="position: absolute; top: 910px; left: 17170px; text-align: center;"><div class="label-enc"></div><div id="ESTV" class="led-enclav"></div></div>
@@ -2678,13 +2727,13 @@ z-index: 9999 !important;
 
 
 
-<div style="position: absolute; top: 1197px; left: 19035px; text-align: center;"><div class="label-enc"></div><div id="ESAF" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1212px; left: 19035px; text-align: center;"><div class="label-enc"></div><div id="ESAF" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 1197px; left: 19455px; text-align: center;"><div class="label-enc"></div><div id="ESBF" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1212px; left: 19455px; text-align: center;"><div class="label-enc"></div><div id="ESBF" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 1395px; left: 19640px; text-align: center;"><div class="label-enc"></div><div id="ESZF" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1380px; left: 19640px; text-align: center;"><div class="label-enc"></div><div id="ESZF" class="led-enclav"></div></div>
 
-<div style="position: absolute; top: 1395px; left: 19250px; text-align: center;"><div class="label-enc"></div><div id="ESYF" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1380px; left: 19250px; text-align: center;"><div class="label-enc"></div><div id="ESYF" class="led-enclav"></div></div>
 
 <div style="position: absolute; top: 1348px; left: 19125px; text-align: center;"><div id="EW60" class="led-enclav enclav-cambio"></div></div>
 
@@ -2704,13 +2753,13 @@ z-index: 9999 !important;
 
 <div class="nombre-cambio" style="top: 1227px; left: 21125px;">w73</div>
 <div class="nombre-cambio" style="top: 1325px; left: 20870px;">w72</div>
-<div class="nombre-cambio" style="top: 1227px; left: 20545px;">W71</div>
+<div class="nombre-cambio" style="top: 1227px; left: 20560px;">W71</div>
 <div class="nombre-cambio" style="top: 1370px; left: 20630px;">w70</div>
 <div class="nombre-cambio" style="top: 1370px; left: 21030px;">w74</div>
 <div class="nombre-cambio" style="top: 1450px; left: 20930px;">w75</div>
 
 
-<div style="position: absolute; top: 1197px; left: 20495px; text-align: center;"><div class="label-enc"></div><div id="ESAT" class="led-enclav"></div></div>
+<div style="position: absolute; top: 1212px; left: 20495px; text-align: center;"><div class="label-enc"></div><div id="ESAT" class="led-enclav"></div></div>
 
 <div style="position: absolute; top: 1222px; left: 21260px; text-align: center;"><div class="label-enc"></div><div id="ESZ1" class="led-enclav"></div></div>
 
@@ -5148,19 +5197,20 @@ if (avSf6265) {
 
 // --- PROCESAMIENTO SECTOR MALDONADO (CORREGIDO) ---
 var dataMal = cabinas.maldonado || cabinas["maldonado"];
-if (dataMal && dataMal.status) {
+if (dataMal) {
+   
 
-    
-            var led = document.getElementById('indicadormaldonado') || document.getElementById('indicadorMaldonado');
-        if (led) {
-            if (Number(dataMal.status.status) === 1) {
-                    led.className = 'led-status led-on';
-                    window.lastHeartbeatmaldonado = Date.now();
-                } else {
-                    led.className = 'led-status led-off';
-                }
-            }
+  var led = document.getElementById('indicadorempalme');
 
+
+    if (led) {
+        if (Number(dataMal.status.status) === 1) {
+            led.className = 'led-status led-on';
+            window.lastHeartbeatmaldonado = Date.now();
+         } else {
+            led.className = 'led-status led-off';
+        }
+    }
 
    
         
@@ -5603,7 +5653,11 @@ setInterval(function() {
             { id: 'indicadorsanisidro',    timer: window.lastHeartbeatsanisidro,    ref: 'cabinas/sanisidro/status/status' },
             { id: 'indicadorvictoria',    timer: window.lastHeartbeatvictoria,    ref: 'cabinas/victoria/status/status' },
             { id: 'indicadorsanfernando', timer: window.lastHeartbeatsanfernando,  ref:'cabinas/sanfernando/status/status' },
-            { id: 'indicadortigre', timer: window.lastHeartbeattigre,  ref:'cabinas/tigre/status/status' }
+            { id: 'indicadortigre', timer: window.lastHeartbeattigre,  ref:'cabinas/tigre/status/status' },
+            { id: 'indicadorempalme', timer: window.lastHeartbeatmaldonado,  ref:'cabinas/maldonado/status/status' },
+            { id: 'indicadorretiro', timer: window.lastHeartbeatretiro,  ref:'cabinas/retiro/status/status' }
+
+
         ];
 
         cVig.forEach(function(c) {
