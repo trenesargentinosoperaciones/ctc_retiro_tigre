@@ -9,7 +9,7 @@
 
 <style>
     body { background-color: #000; color: white; font-family: Arial; margin: 0; overflow-x: auto; user-select: none; }
-    .map-container { position: relative; width: 25500px; height: 2000px; background-color: #0b0c10; }
+    .map-container { position: relative; width: 22000px; height: 2000px; background-color: #0b0c10; }
 
     /* --- ESTILO SEÑALES --- */
     .senal-unificada { position: absolute; display: flex; flex-direction: column; align-items: center; z-index: 150; }
@@ -134,6 +134,10 @@ transform: rotate(-270deg);
     .diagonal { transform-origin: 0% 50%; }    
 
 /* --- PANELES CONTROLES SUPERIORES --- */
+
+.status-container-retiro { position: absolute; top: 20px; left: 2520px; background-color: #0056b3; padding: 12px 18px; border-radius: 8px; border: 2px solid white; display: flex; flex-direction: column; gap: 12px; z-index: 100; box-shadow: 5px 5px 15px rgba(0,0,0,0.7); font-size: 15px; }
+
+
  .status-container-sanmartin { position: absolute; top: 600px; left: 8500px; background-color: #0056b3; padding: 12px 18px; border-radius: 8px; border: 2px solid white; display: flex; flex-direction: column; gap: 12px; z-index: 100; box-shadow: 5px 5px 15px rgba(0,0,0,0.7); font-size: 15px; }
 
     .status-container-mald { position: absolute; top: 600px; left: 8800px; background-color: #0056b3; padding: 12px 18px; border-radius: 8px; border: 2px solid white; display: flex; flex-direction: column; gap: 12px; z-index: 100; box-shadow: 5px 5px 15px rgba(0,0,0,0.7); font-size: 15px; }
@@ -301,8 +305,8 @@ transform: rotate(-270deg);
 
 .status-box-ret {
     position: absolute;
-    top: 780px; /* Ajustalo ligeramente para que quede justo arriba del azul */
-    left: 40px; 
+    top: 1430px; /* Ajustalo ligeramente para que quede justo arriba del azul */
+    left: 2980px; 
     width: 260px; /* El mismo ancho que tu panel azul o ajustado */
     background-color: #FFD700; /* Amarillo Ferroviario */
     border: 2px solid #000;
@@ -714,7 +718,55 @@ z-index: 9999 !important;
     pointer-events: none;
     z-index: 5;
 }
+.texto-amarillo-custom {
+        position: absolute;
+        color: #FFFF00 !important;
+        font-weight: bold !important;
+        font-size: 11px !important;
+        text-transform: uppercase;
+        white-space: nowrap;
+        background: rgba(0,0,0,0.6);
+        padding: 1px 4px;
+        border-radius: 2px;
+        z-index: 50 !important;
+        pointer-events: none; /* Ponlo en 'auto' si quieres que sea clickeable */
+    }
+/* --- FIN DE PARAGOLPES (ESTILO ROBUSTO) --- */
+    .fparagolpes {
+        position: absolute;
+        width: 14px;
+        height: 20px; /* Coincide con la altura de tus vías */
+        background-color: #fff;
+        box-shadow: 0 0 8px rgba(255,255,255,0.8);
+        z-index: 35;
+    }
 
+    /* Paragolpes con la T a la izquierda (barra vertical gruesa a la izquierda) */
+    .paragolpes-izq {
+        clip-path: polygon(0% 0%, 25% 0%, 25% 25%, 100% 25%, 100% 75%, 25% 75%, 25% 100%, 0% 100%);
+    }
+
+    /* Paragolpes con la T a la derecha (barra vertical gruesa a la derecha) */
+    .paragolpes-der {
+        clip-path: polygon(0% 25%, 75% 25%, 75% 0%, 100% 0%, 100% 100%, 75% 100%, 75% 75%, 0% 75%);
+    }
+.circulo-letra-b {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #000; /* Fondo negro para que resalte como en el tablero */
+        border: 2px solid #FFFF00; /* Borde amarillo brillante */
+        border-radius: 50%;
+        color: #FFFF00; /* Letra amarilla */
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 8px rgba(255,255,0,0.6);
+        z-index: 60;
+    }
 
 </style>
 </head>
@@ -723,19 +775,65 @@ z-index: 9999 !important;
 <!-- BOTONES FLOTANTES DE ACCESO RÁPIDO CON CAMBIO DE COLOR ACTIVO -->
 <div id="barra-navegacion" style="position: fixed; bottom: 15px; left: 15px; z-index: 99999; display: flex; gap: 8px; overflow-x: auto; max-width: 95vw; padding-bottom: 5px; scrollbar-width: thin;">
     <!-- Nuevas ubicaciones -->
-    <button onclick="irAEstacion(this, 0)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Retiro</button>
+    <button onclick="irAEstacion(this, 2800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Retiro</button>
     <button onclick="irAEstacion(this, 8400)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 E. Maldonado</button>
      <button onclick="irAEstacion(this, 10500, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Belgrano C</button>
     <button onclick="irAEstacion(this, 11800, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Núñez</button>
     <button onclick="irAEstacion(this, 13460, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Olivos</button>
     <button onclick="irAEstacion(this, 15050, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 San Isidro</button>
     <button onclick="irAEstacion(this, 16775, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Victoria</button>
-    <button onclick="irAEstacion(this, 18750, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 San Fernando</button>
+    <button onclick="irAEstacion(this, 18600, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 San Fernando</button>
     <button onclick="irAEstacion(this, 20280, 800)" class="btn-nav" style="background: #0056b3; color: white; border: 2px solid white; padding: 10px 14px; border-radius: 6px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.7); font-size: 13px; white-space: nowrap;">📍 Tigre</button>
 </div>
 
 
 <div class="map-container">
+
+<div class="status-container-retiro">
+
+ <div class="status-row">
+ <div class="nombre-grupo">W5a</div>
+ <div id="LW5aP" class="led-rd"></div><b>+</b>
+ <div id="LW5aM" class="led-rd"></div><b>-</b>
+ <div id="AW5a" class="led-rd"></div><b>A</b></div>
+
+ <div class="status-row">
+ <div class="nombre-grupo">W5b</div>
+ <div id="LW5bP" class="led-rd"></div><b>+</b>
+ <div id="LW5bM" class="led-rd"></div><b>-</b>
+ <div id="AW5b" class="led-rd"></div><b>A</b></div>
+
+<div class="status-row">
+ <div class="nombre-grupo">W14ar</div>
+ <div id="LW14arP" class="led-rd"></div><b>+</b>
+ <div id="LW14arM" class="led-rd"></div><b>-</b>
+ <div id="AW14ar" class="led-rd"></div><b>A</b></div>
+
+ <div class="status-row">
+ <div class="nombre-grupo">W14br</div>
+ <div id="LW14brP" class="led-rd"></div><b>+</b>
+ <div id="LW14brM" class="led-rd"></div><b>-</b>
+ <div id="AW14br" class="led-rd"></div><b>A</b></div>
+
+<div class="status-row">
+ <div class="nombre-grupo">W16a</div>
+ <div id="LW16aP" class="led-rd"></div><b>+</b>
+ <div id="LW16aM" class="led-rd"></div><b>-</b>
+ <div id="AW16a" class="led-rd"></div><b>A</b></div>
+
+ <div class="status-row">
+ <div class="nombre-grupo">W16b</div>
+ <div id="LW16bP" class="led-rd"></div><b>+</b>
+ <div id="LW16bM" class="led-rd"></div><b>-</b>
+ <div id="AW16b" class="led-rd"></div><b>A</b></div>
+
+
+ 
+  
+</div>
+
+
+
 
 <div class="status-box-ret">
 
@@ -915,87 +1013,119 @@ z-index: 9999 !important;
 
 
 
-<div id="cv11" class="via v-abajo" data-nombre="CV11" style="top: 250px; left: 360px; width: 7785px;"></div>
-<div class="paragolpe-diseno" style="top: 270px; left: 330px;"><div class="union"></div></div>
+<div id="cv11" class="via v-abajo" data-nombre="CV11" style="top: 250px; left: 2860px; width: 4785px;"></div>
+<div class="paragolpe-diseno" style="top: 270px; left: 2830px;"><div class="union"></div></div>
+<div id="cv11fin" class="via v-abajo" data-nombre="CV11FIN" style="top: 250px; left: 7650px; width: 500px;"></div>
+<div class="circulo-letra-b" style="top: 245px; left: 8150px;">B</div>
 
-<div id="cv10" class="via v-abajo" data-nombre="CV10" style="top: 350px; left: 360px; width: 600px;"></div>
-<div class="paragolpe-diseno" style="top: 370px; left: 330px;"><div class="union"></div></div>
+<div id="cv10" class="via v-abajo" data-nombre="CV10" style="top: 350px; left: 2860px; width: 95px;"></div>
+<div class="paragolpe-diseno" style="top: 370px; left: 2830px;"><div class="union"></div></div>
 
-<div id="cv9" class="via v-abajo" data-nombre="CV9" style="top: 450px; left: 360px; width: 600px;"></div>
-<div class="anden" style="top: 490px; left: 390px; width: 450px;"></div>
-<div class="label-plataforma" style="top: 490px; left: 500px; width: 170px; height: 35px;">PLATAFORMA 9</div>
-<div class="paragolpe-diseno" style="top: 470px; left: 330px;"><div class="union"></div></div>
+<div id="cv10fin" class="via v-abajo" data-nombre="CV10fin" style="top: 350px; left: 3270px; width:3790px;"></div>
+<div class="paragolpe-diseno" style="top: 370px; left: 2830px;"><div class="union"></div></div>
 
-<div id="cv8" class="via v-abajo" data-nombre="CV8" style="top: 550px; left: 360px; width: 600px;"></div>
-<div class="anden" style="top: 590px; left: 390px; width: 450px;"></div>
-<div class="label-plataforma" style="top: 590px; left: 500px; width: 170px; height: 35px;">PLATAFORMA 8</div>
-<div class="paragolpe-diseno" style="top: 570px; left: 330px;"><div class="union"></div></div>
 
+<div id="cv1a" class="via v-abajo" data-nombre="CV1A" style="top: 450px; left: 2860px; width: 95px;"></div>
+<div class="anden" style="top: 490px; left: 2890px; width: 450px;"></div>
+<div class="label-plataforma" style="top: 490px; left: 3030px; width: 170px; height: 35px;">PLATAFORMA 9</div>
+<div class="paragolpe-diseno" style="top: 470px; left: 2830px;"><div class="union"></div></div>
 
-<div id="cv7" class="via v-abajo" data-nombre="CV7" style="top: 650px; left: 360px; width: 600px;"></div>
-<div class="anden" style="top: 690px; left: 390px; width: 450px;"></div>
-<div class="label-plataforma" style="top: 690px; left: 500px; width: 170px; height: 35px;">PLATAFORMA 7 y 8</div>
-<div class="paragolpe-diseno" style="top: 670px; left: 330px;"><div class="union"></div></div>
+<div id="cv9" class="via v-abajo" data-nombre="CV9" style="top: 450px; left: 3225px; width: 2975px;"></div>
+<div id="VIA DIESEL" class="via v-arriba" data-nombre="VIA DIESEL" style="top: 450px; left: 6205px; width: 1100px;"></div>
+<div class="circulo-letra-b" style="top: 445px; left: 7305px;">B</div>
 
 
 
-<div id="cv6" class="via v-abajo" data-nombre="CV6" style="top: 750px; left: 360px; width: 600px;"></div>
-<div class="anden" style="top: 790px; left: 390px; width: 450px;"></div>
-<div class="label-plataforma" style="top: 790px; left: 500px; width: 170px; height: 35px;">PLATAFORMA 6 y 7</div>
-<div class="paragolpe-diseno" style="top: 770px; left: 330px;"><div class="union"></div></div>
 
 
 
-<div id="cv5" class="via v-abajo" data-nombre="CV5" style="top: 850px; left: 360px; width: 600px;"></div>
-<div class="anden" style="top: 890px; left: 390px; width: 450px;"></div>
-<div class="label-plataforma" style="top: 890px; left: 500px; width: 170px; height: 35px;">PLATAFORMA 5 y 6</div>
-<div class="paragolpe-diseno" style="top: 870px; left: 330px;"><div class="union"></div></div>
+<div class="fparagolpes paragolpes-izq" style="top: 245px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-izq" style="top: 345px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-izq" style="top: 445px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-izq" style="top: 545px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-izq" style="top: 645px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-izq" style="top: 745px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-izq" style="top: 845px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-izq" style="top: 945px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-izq" style="top: 1045px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-izq" style="top: 1145px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-izq" style="top: 1345px; left: 2840px;"></div>
+<div class="fparagolpes paragolpes-der" style="top: 1445px; left: 4995px;"></div>
+<div class="fparagolpes paragolpes-der" style="top: 1545px; left: 6370px;"></div>
+<div class="fparagolpes paragolpes-der" style="top: 345px; left: 7065px;"></div>
+<div class="paragolpe-diseno" style="top: 1420px; left: 4995px; transform: rotate(180deg);"><div class="union"></div></div>
+<div class="paragolpe-diseno" style="top: 1520px; left: 6370px; transform: rotate(180deg);"><div class="union"></div></div>
+<div class="paragolpe-diseno" style="top: 320px; left: 7065px; transform: rotate(180deg);"><div class="union"></div></div>
 
+<div class="texto-amarillo-custom" style="top: 295px; left: 2832px;">P11</div>
+<div class="texto-amarillo-custom" style="top: 395px; left: 2832px;">P10</div>
+<div class="texto-amarillo-custom" style="top: 495px; left: 2832px;">P9</div>
+<div class="texto-amarillo-custom" style="top: 595px; left: 2832px;">P8</div>
+<div class="texto-amarillo-custom" style="top: 695px; left: 2832px;">P7</div>
+<div class="texto-amarillo-custom" style="top: 795px; left: 2832px;">P6</div>
+<div class="texto-amarillo-custom" style="top: 895px; left: 2832px;">P5</div>
+<div class="texto-amarillo-custom" style="top: 995px; left: 2832px;">P4</div>
+<div class="texto-amarillo-custom" style="top: 1095px; left: 2832px;">P3</div>
+<div class="texto-amarillo-custom" style="top: 1195px; left: 2832px;">P2</div>
+<div class="texto-amarillo-custom" style="top: 1395px; left: 2832px;">P1</div>
+<div class="texto-amarillo-custom" style="top: 1405px; left: 4995px;">E1</div>
+<div class="texto-amarillo-custom" style="top: 1505px; left: 6370px;">E2</div>
+<div class="texto-amarillo-custom" style="top: 305px; left: 7065px;">E10</div>
 
+<div class="circulo-letra-b" style="top: 1545px; left: 2835px;">B</div>
 
-<div id="cv4" class="via v-abajo" data-nombre="CV4" style="top: 950px; left: 360px; width: 600px;"></div>
-<div class="anden" style="top: 990px; left: 390px; width: 450px;"></div>
-<div class="label-plataforma" style="top: 990px; left: 500px; width: 170px; height: 35px;">PLATAFORMA 4 y 5</div>
-<div class="paragolpe-diseno" style="top: 970px; left: 330px;"><div class="union"></div></div>
 
 
-<div id="cv3" class="via v-abajo" data-nombre="CV3" style="top: 1050px; left: 360px; width: 600px;"></div>
-<div class="anden" style="top: 1090px; left: 390px; width: 450px;"></div>
-<div class="label-plataforma" style="top: 1090px; left: 500px; width: 170px; height: 35px;">PLATAFORMA 3 y 4</div>
-<div class="paragolpe-diseno" style="top: 1070px; left: 330px;"><div class="union"></div></div>
 
+<div id="cv8" class="via v-abajo" data-nombre="CV8" style="top: 550px; left: 2860px; width: 2680px;"></div>
+<div class="anden" style="top: 590px; left: 2890px; width: 450px;"></div>
+<div class="label-plataforma" style="top: 590px; left: 3030px; width: 170px; height: 35px;">PLATAFORMA 8</div>
+<div class="paragolpe-diseno" style="top: 570px; left: 2830px;"><div class="union"></div></div>
 
 
-<div id="cv2" class="via v-abajo" data-nombre="CV2" style="top: 1150px; left: 360px; width: 7585px;"></div>
-<div class="anden2" style="top: 1186px; left: 390px; width: 450px;"></div>
-<div class="label-plataforma" style="top: 1240px; left: 500px; width: 170px; height: 35px;">PLATAFORMA 2 y 3</div>
-<div class="paragolpe-diseno" style="top: 1170px; left: 330px;"><div class="union"></div></div>
+<div id="cv7" class="via v-abajo" data-nombre="CV7" style="top: 650px; left: 2860px; width: 2580px;"></div>
+<div class="anden" style="top: 690px; left: 2890px; width: 450px;"></div>
+<div class="label-plataforma" style="top: 690px; left: 3030px; width: 170px; height: 35px;">PLATAFORMA 7 y 8</div>
+<div class="paragolpe-diseno" style="top: 670px; left: 2830px;"><div class="union"></div></div>
 
 
 
+<div id="cv6" class="via v-abajo" data-nombre="CV6" style="top: 750px; left: 2860px; width: 2380px;"></div>
+<div class="anden" style="top: 790px; left: 2890px; width: 450px;"></div>
+<div class="label-plataforma" style="top: 790px; left: 3030px; width: 170px; height: 35px;">PLATAFORMA 6 y 7</div>
+<div class="paragolpe-diseno" style="top: 770px; left: 2830px;"><div class="union"></div></div>
 
 
 
+<div id="cv5" class="via v-abajo" data-nombre="CV5" style="top: 850px; left: 2860px; width: 600px;"></div>
+<div class="anden" style="top: 890px; left: 2890px; width: 450px;"></div>
+<div class="label-plataforma" style="top: 890px; left: 3030px; width: 170px; height: 35px;">PLATAFORMA 5 y 6</div>
+<div class="paragolpe-diseno" style="top: 870px; left: 2830px;"><div class="union"></div></div>
+<div id="cv5fin" class="via v-abajo" data-nombre="CV5fin" style="top: 850px; left: 3465px; width: 940px;"></div>
 
 
+<div id="cv4" class="via v-abajo" data-nombre="CV4" style="top: 950px; left: 2860px; width: 600px;"></div>
+<div class="anden" style="top: 990px; left: 2890px; width: 450px;"></div>
+<div class="label-plataforma" style="top: 990px; left: 3030px; width: 170px; height: 35px;">PLATAFORMA 4 y 5</div>
+<div class="paragolpe-diseno" style="top: 970px; left: 2830px;"><div class="union"></div></div>
+<div id="cv4fin" class="via v-abajo" data-nombre="CV4" style="top: 950px; left: 3465px; width: 540px;"></div>
 
 
-<div id="cv1" class="via v-abajo" data-nombre="CV1" style="top: 1350px; left: 360px; width: 7585px;"></div>
-<div class="anden" style="top: 1390px; left: 390px; width: 450px;"></div>
-<div class="label-plataforma" style="top: 1390px; left: 500px; width: 170px; height: 35px;">PLATAFORMA 1</div>
-<div class="paragolpe-diseno" style="top: 1370px; left: 330px;"><div class="union"></div></div>
+<div id="cv3" class="via v-abajo" data-nombre="CV3" style="top: 1050px; left: 2860px; width: 600px;"></div>
+<div class="anden" style="top: 1090px; left: 2890px; width: 450px;"></div>
+<div class="label-plataforma" style="top: 1090px; left: 3030px; width: 170px; height: 35px;">PLATAFORMA 3 y 4</div>
+<div class="paragolpe-diseno" style="top: 1070px; left: 2830px;"><div class="union"></div></div>
 
 
 
-<div id="alamo" class="via v-abajo" data-nombre="ALAMO" style="top: 1450px; left: 860px; width: 300px;"></div>
+<div id="cv3" class="via v-abajo" data-nombre="CV3" style="top: 1050px; left: 3465px; width: 1450px;"></div>
 
 
 
+<div id="cvPA1" class="via v-abajo" data-nombre="CVPA1" style="top: 1050px; left: 7550px; width: 395px;"></div>
 
 
 
-<div id="viapuerto" class="via v-arriba" data-nombre="VIA PUERTO" style="top: 1550px; left: 360px; width: 495px;"></div>
-<div id="cvvp" class="via v-abajo" data-nombre="CVVP" style="top: 1550px; left: 860px; width: 900px;"></div>
 
 
 
@@ -1008,24 +1138,331 @@ z-index: 9999 !important;
 
 
 
+<div id="cv2" class="via v-abajo" data-nombre="CV2" style="top: 1150px; left: 2860px; width: 595px;"></div>
+<div class="anden2" style="top: 1186px; left: 2890px; width: 450px;"></div>
+<div class="label-plataforma" style="top: 1240px; left: 3030px; width: 170px; height: 35px;">PLATAFORMA 2 y 3</div>
+<div class="paragolpe-diseno" style="top: 1170px; left: 2830px;"><div class="union"></div></div>
 
+<div id="cvPD2" class="via v-abajo" data-nombre="CVPD2" style="top: 1150px; left: 7550px; width: 395px;"></div>
 
+<div id="cv22" class="via v-abajo" data-nombre="CV22" style="top: 1250px; left: 4485px; width: 2455px;"></div>
 
 
+<div id="cv1" class="via v-abajo" data-nombre="CV1" style="top: 1350px; left: 2860px; width: 7595px;"></div>
+<div class="anden" style="top: 1390px; left: 2890px; width: 450px;"></div>
+<div class="label-plataforma" style="top: 1390px; left: 3030px; width: 170px; height: 35px;">PLATAFORMA 1</div>
+<div class="paragolpe-diseno" style="top: 1370px; left: 2830px;"><div class="union"></div></div>
 
+<div id="cvLD2" class="via v-abajo" data-nombre="CVLD2" style="top: 1350px; left: 7550px; width: 395px;"></div>
 
 
-<div id="s9_base" class="senal-unificada f-rojo" style="top: 405px; left: 1100px;"><div class="s-nombre-real">9</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="cvLA1" class="via v-abajo" data-nombre="CVLA1" style="top: 1250px; left: 7550px; width: 395px;"></div>
+<div id="w49rpm" class="via v-abajo" data-nombre="CVA49" style="top: 1050px; left: 6945px; width: 600px;"></div>
+<div id="w49r1pm" class="via v-abajo" data-nombre="" style="top: 1150px; left: 6945px; width: 600px;"></div>
+<div id="w49r2pm" class="via v-abajo" data-nombre="" style="top: 1250px; left: 6945px; width: 600px;"></div>
+<div id="w49r3pm" class="via v-abajo" data-nombre="" style="top: 1350px; left: 6945px; width: 600px;"></div>
 
 
+<div id="w49r4pm" class="via v-abajo" data-nombre="" style="top: 1050px; left: 6040px; width: 900px;"></div>
 
-<div id="s8_base" class="senal-unificada f-rojo" style="top: 505px; left: 870px;"><div class="s-nombre-real">8</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
+<div id="w49r5pm" class="via diagonal via-fantasma v-abajo" data-nombre="" style="top: 550px; left: 5540px; width: 710px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); transform: rotate(45deg);"></div>
 
+<div id="w49r6pm" class="via diagonal via-fantasma v-abajo" data-nombre="" style="top: 650px; left: 5440px; width: 710px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); transform: rotate(45deg);"></div>
 
 
+<div id="w49r7pm" class="via v-abajo" data-nombre="49r7" style="top: 1150px; left: 5940px; width: 1000px;"></div>
 
-<div id="s7_base" class="senal-unificada f-rojo" style="top: 660px; left: 860px;">
+<div id="w49r9pm" class="via diagonal via-fantasma v-abajo" data-nombre="49r9" style="top: 1200px; left: 5990px; width: 64px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+
+<div id="w49r6pm" class="via diagonal via-fantasma v-abajo" data-nombre="49r6" style="top: 1160px; left: 5948px; width: 60px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+<div id="w49r8pm" class="via diagonal via-fantasma v-abajo" data-nombre="" style="top: 750px; left: 5240px; width: 575px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+
+
+
+<div id="w49r10pm" class="via diagonal via-fantasma v-abajo" data-nombre="49r10" style="top: 1160px; left: 5648px; width: 60px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+<div id="w49r11pm" class="via diagonal via-fantasma v-abajo" data-nombre="49r11" style="top: 1200px; left: 5690px; width: 64px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+
+
+
+<div id="w37bminus" class="via via-fantasma v-arriba" data-nombre="37B" style="top: 580px; left: 5400px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+<div id="w37aminus" class="via via-fantasma v-arriba" data-nombre="37A" style="top: 621px; left: 5360px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+<div id="w33raminus" class="via via-fantasma v-arriba" data-nombre="C33" style="top: 421px; left: 5600px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+<div id="w32raminus" class="via via-fantasma v-arriba" data-nombre="C32" style="top: 221px; left: 7300px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+<div id="w34brminus" class="via via-fantasma v-arriba" data-nombre="34B" style="top: 280px; left: 6700px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+<div id="w34arminus" class="via via-fantasma v-arriba" data-nombre="34A" style="top: 321px; left: 6660px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="viapuerto" class="via v-arriba" data-nombre="VIA PUERTO" style="top: 1550px; left: 2860px; width: 495px;"></div>
+<div id="cvvp" class="via v-abajo" data-nombre="CVVP" style="top: 1550px; left: 3360px; width: 900px;"></div>
+<div id="cvvpFIN" class="via v-abajo" data-nombre="CVVPFIN" style="top: 1550px; left: 4265px; width: 2100px;"></div>
+
+
+
+
+<div id="w5bplus" class="via v-arriba" data-nombre="" style="top: 350px; left: 2960px; width: 200px;"></div>
+<div id="w5bpm" class="via v-arriba" data-nombre="5B" style="top: 350px; left: 3160px; width: 105px;"></div>
+<div id="w5bminus" class="via via-fantasma v-arriba" data-nombre="" style="top: 380px; left: 3100px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+<div id="w5apm" class="via v-abajo" data-nombre="5A" style="top: 450px; left: 2960px; width: 120px;"></div>
+<div id="w5aplus" class="via v-abajo" data-nombre="" style="top: 450px; left: 3080px; width: 140px;"></div>
+<div id="w5aminus" class="via via-fantasma v-arriba" data-nombre="" style="top: 421px; left: 3060px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+
+
+
+<div id="w14arplus" class="via v-arriba" data-nombre="" style="top: 1150px; left: 3560px; width: 75px;"></div>
+<div id="w14arpm" class="via v-arriba"  style="top: 1150px; left: 3460px; width: 100px;"><span style="position: absolute; top: -18px; left: 50%; transform: translateX(-50%); color: #ffff00; font-weight: bold; font-size: 11px;">14A</span>
+</div>
+
+<div id="w14arminus" class="via diagonal via-fantasma v-arriba" data-nombre="" style="top: 1156px; left: 3550px; width: 120px;height: 10px; clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+<div id="w16bplus" class="via v-arriba" data-nombre="" style="top: 1150px; left: 3640px; width: 85px;"></div>
+<div id="w16bpm" class="via v-arriba" data-nombre="16B" style="top: 1150px; left: 3725px; width: 63px;"></div>
+<div id="w16bminus" class="via diagonal via-fantasma v-arriba" data-nombre="" style="top: 1240px; left: 3650px; width: 120px;height: 10px; clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);transform: rotate(-45deg);"></div>
+
+<div id="w16aplus" class="via v-abajo" data-nombre="" style="top: 1350px; left: 3560px; width: 75px"></div><div id="w16apm" class="via v-abajo" data-nombre="16A" style="top: 1350px; left: 3460px; width: 100px;"></div>
+<div id="w16aminus" class="via diagonal via-fantasma v-abajo" data-nombre="" style="top: 1345px; left: 3550px; width: 125px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);transform:rotate(-45deg);"></div>
+
+<div id="w14brpm" class="via v-abajo" style="top: 1350px; left: 3725px; width: 63px;" ><span style="position: absolute; top: 18px; left: 50%; transform: translateX(-50%); color: #ffff00; font-weight: bold; font-size: 11px;">14B</span>
+</div>
+
+<div id="w14brminus" class="via via-fantasma v-abajo" data-nombre="" style="top: 1300px; left: 3632px; width: 125px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+<div id="w14brplus" class="via diagonal  v-abajo" data-nombre="" style="top: 1350px; left: 3640px; width: 85px;"></div>
+
+<div id="w42aminus" class="via diagonal via-fantasma v-abajo" data-nombre="42A" style="top: 1545px; left: 5050px; width: 130px;height: 10px;  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 9% 100%);transform: rotate(-45deg);"></div>
+
+<div id="w42bminus" class="via diagonal via-fantasma v-arriba" data-nombre="42B" style="top: 1455px; left: 5140px; width: 140px;height: 10px;  clip-path: polygon(0% 0%, 92% 0%, 100% 100%, 9% 100%);transform: rotate(-45deg);"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="w1bbrpm" class="via v-abajo" style="top: 1350px; left: 4175px; width: 63px;" ><span style="position: absolute; top: 18px; left: 50%; transform: translateX(-50%); color: #ffff00; font-weight: bold; font-size: 11px;">1B</span>
+</div>
+
+<div id="w1bbrminus" class="via via-fantasma v-abajo" data-nombre="" style="top: 1400px; left: 3882px; width: 125px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+<div id="w1bbrplus" class="via diagonal  v-abajo" data-nombre="" style="top: 1350px; left: 3890px; width: 85px;"></div>
+<div id="w1bbrmm" class="via diagonal  v-abajo" data-nombre="" style="top: 1450px; left: 3985px; width: 150px;"></div>
+
+
+
+
+<div id="w59bminus" class="via via-fantasma v-arriba" data-nombre="59B" style="top: 1280px; left: 6550px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+<div id="w59aminus" class="via via-fantasma v-arriba" data-nombre="59A" style="top: 1321px; left: 6510px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+<div id="w99apm" class="via diagonal via-fantasma v-abajo" data-nombre="99a" style="top: 1300px; left: 5790px; width: 64px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+
+<div id="w99bpm" class="via diagonal via-fantasma v-abajo" data-nombre="99b" style="top: 1260px; left: 5748px; width: 60px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+<div id="w31brpm" class="via diagonal via-fantasma v-abajo" data-nombre="31B" style="top: 560px; left: 5048px; width: 60px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+<div id="w31arpm" class="via diagonal via-fantasma v-abajo" data-nombre="31A" style="top: 600px; left: 5090px; width: 64px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+
+
+
+
+
+
+
+<div id="w59aminus" class="via via-fantasma v-arriba" data-nombre="" style="top: 1221px; left: 6610px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+<div id="w59bminus" class="via via-fantasma v-arriba" data-nombre="" style="top: 1180px; left: 6650px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+
+<div id="w59aminus" class="via via-fantasma v-arriba" data-nombre="" style="top: 1121px; left: 6710px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+<div id="w59bminus" class="via via-fantasma v-arriba" data-nombre="" style="top: 1080px; left: 6750px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+
+<div id="w28arminus" class="via diagonal via-fantasma v-arriba" data-nombre="28A" style="top: 656px; left: 4800px; width: 60px;height: 10px; clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%); transform: rotate(45deg);"></div>
+<div id="w21bminus" class="via diagonal via-fantasma v-arriba" data-nombre="21B" style="top: 700px; left: 4850px; width: 60px;height: 10px; clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);transform: rotate(-45deg);"></div>
+
+
+<div id="w21aminus" class="via diagonal via-fantasma v-abajo" data-nombre="21A" style="top: 745px; left: 4800px; width: 60px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);transform:rotate(-45deg);"></div>
+
+
+
+<div id="w28brminus" class="via via-fantasma v-abajo" data-nombre="28B" style="top: 725px; left: 4840px; width: 60px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+
+
+
+<div id="w10arminus" class="via diagonal via-fantasma v-arriba" data-nombre="10A" style="top: 956px; left: 3600px; width: 60px;height: 10px; clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%); transform: rotate(45deg);"></div>
+<div id="w12bminus" class="via diagonal via-fantasma v-arriba" data-nombre="12B" style="top: 1000px; left: 3650px; width: 60px;height: 10px; clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);transform: rotate(-45deg);"></div>
+
+
+<div id="w12aminus" class="via diagonal via-fantasma v-abajo" data-nombre="12A" style="top: 1045px; left: 3600px; width: 60px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);transform:rotate(-45deg);"></div>
+
+
+
+<div id="w10brminus" class="via via-fantasma v-abajo" data-nombre="10B" style="top: 1025px; left: 3640px; width: 60px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+
+
+<div id="w8bminus" class="via via-fantasma v-arriba" data-nombre="8B" style="top: 780px; left: 3650px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+<div id="w8aminus" class="via via-fantasma v-arriba" data-nombre="8A" style="top: 821px; left: 3610px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+
+<div id="w19bminus" class="via via-fantasma v-arriba" data-nombre="19B" style="top: 680px; left: 3950px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+<div id="w19aminus" class="via via-fantasma v-arriba" data-nombre="19A" style="top: 721px; left: 3910px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+<div id="w20aminus" class="via via-fantasma v-arriba" data-nombre="20A" style="top: 580px; left: 4050px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+<div id="w19cminus" class="via via-fantasma v-arriba" data-nombre="19C" style="top: 621px; left: 4010px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+<div id="w20bminus" class="via via-fantasma v-arriba" data-nombre="20B" style="top: 480px; left: 4150px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+<div id="w20cminus" class="via via-fantasma v-arriba" data-nombre="20C" style="top: 521px; left: 4110px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+<div id="w38arpm" class="via diagonal via-fantasma v-abajo" data-nombre="38A" style="top: 460px; left: 4548px; width: 60px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+<div id="w38brpm" class="via diagonal via-fantasma v-abajo" data-nombre="38B" style="top: 500px; left: 4590px; width: 64px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+<div id="w23arpm" class="via diagonal via-fantasma v-abajo" data-nombre="23A" style="top: 560px; left: 4448px; width: 60px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+<div id="w23brpm" class="via diagonal via-fantasma v-abajo" data-nombre="23B" style="top: 600px; left: 4490px; width: 64px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+<div id="w27aminus" class="via diagonal via-fantasma v-abajo" data-nombre="27A" style="top: 845px; left: 4400px; width: 125px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);transform:rotate(-45deg);"></div>
+
+<div id="w22aminus" class="via diagonal via-fantasma v-abajo" data-nombre="22A" style="top: 945px; left: 4000px; width: 125px;height: 10px; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);transform:rotate(-45deg);"></div>
+
+<div id="w33arminus" class="via diagonal via-fantasma v-arriba" data-nombre="33A" style="top: 1056px; left: 4910px; width: 120px;height: 10px; clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+
+<div id="w35minus" class="via diagonal via-fantasma v-arriba" data-nombre="35A" style="top: 1156px; left: 4400px; width: 120px;height: 10px; clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+
+
+<div id="w6arpm" class="via diagonal via-fantasma v-abajo" data-nombre="6A" style="top: 260px; left: 3898px; width: 60px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+<div id="w6crpm" class="via diagonal via-fantasma v-abajo" data-nombre="6C" style="top: 300px; left: 3940px; width: 64px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+<div id="w6brpm" class="via diagonal via-fantasma v-abajo" data-nombre="6B" style="top: 360px; left: 3998px; width: 60px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+<div id="w25brpm" class="via diagonal via-fantasma v-abajo" data-nombre="25B" style="top: 400px; left: 4040px; width: 64px;height: 10px; clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%); transform: rotate(45deg);"></div>
+
+<div id="w30bminus" class="via via-fantasma v-arriba" data-nombre="30B" style="top: 380px; left: 5100px; width: 65px; height: 10px; clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+<div id="w30aminus" class="via via-fantasma v-arriba" data-nombre="30A" style="top: 421px; left: 5060px; width: 65px; height: 10px;  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 15% 100%);transform: rotate(-45deg);"></div>
+
+
+
+<div id="cv12" class="via v-abajo" data-nombre="CV12" style="top: 1450px; left: 4140px; width: 850px;"></div>
+
+
+
+
+
+
+<div style="position: absolute; top: 448px; left: 3055px; text-align: center;"><div id="EW5a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 348px; left: 3145px; text-align: center;"><div id="EW5b" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1148px; left: 3535px; text-align: center;"><div id="EW14ar" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1148px; left: 3725px; text-align: center;"><div id="EW16b" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1348px; left: 3535px; text-align: center;"><div id="EW16a" class="led-enclav enclav-cambio"></div></div>
+<div style="position: absolute; top: 1348px; left: 3725px; text-align: center;"><div id="EW14br" class="led-enclav enclav-cambio"></div></div>
+
+
+
+
+
+
+
+
+
+<div id="s9_base" class="senal-unificada f-rojo" style="top: 405px; left: 3900px;"><div class="s-nombre-real">9</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s9_base" class="senal-unificada f-rojo" style="top: 405px; left: 3900px;"><div class="s-nombre-real">9</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="sMX1_base" class="senal-unificada f-rojo" style="top: 405px; left: 2960px;"><div class="s-nombre-real">MX1</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="sMX4_base" class="senal-unificada f-rojo" style="top: 365px; left: 2960px;"><div class="s-nombre-real">MX4</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s10_base" class="senal-unificada f-rojo" style="top: 305px; left: 3370px;"><div class="s-nombre-real">10</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s11_base" class="senal-unificada f-rojo" style="top: 205px; left: 3370px;"><div class="s-nombre-real">11</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s31_base" class="senal-unificada f-rojo sentido-izq nombre-s-arriba" style="top:200px; left: 7610px;"><div class="s-nombre-real">31</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="sMX3_base" class="senal-unificada f-rojo sentido-izq nombre-s-arriba" style="top:365px; left: 3230px;"><div class="s-nombre-real">MX3</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="sMX2_base" class="senal-unificada f-rojo sentido-izq nombre-s-arriba" style="top:405px; left: 3190px;"><div class="s-nombre-real">MX2</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+
+
+
+
+
+
+<div id="s29_base" class="senal-unificada f-rojo" style="top: 305px; left: 6470px;"><div class="s-nombre-real">29</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s28_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top:460px; left: 5690px;"><div class="s-nombre-real">28</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s27_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top:460px; left: 4810px;"><div class="s-nombre-real">27</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+
+
+
+<div id="s8_base" class="senal-unificada f-rojo" style="top: 505px; left: 3370px;"><div class="s-nombre-real">8</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s19_base" class="senal-unificada f-rojo" style="top: 505px; left: 5280px;"><div class="s-nombre-real">19</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s18_base" class="senal-unificada f-rojo" style="top: 605px; left: 5280px;"><div class="s-nombre-real">18</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s28_base" class="senal-unificada f-rojo sentido-izq nombre-s-arriba" style="top:605px; left: 5190px;"><div class="s-nombre-real">28</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s17_base" class="senal-unificada f-rojo" style="top: 705px; left: 5180px;"><div class="s-nombre-real">17</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s24_base" class="senal-unificada f-rojo sentido-izq nombre-s-arriba" style="top:705px; left: 5090px;"><div class="s-nombre-real">24</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+
+
+
+<div id="s7_base" class="senal-unificada f-rojo" style="top: 660px; left: 3360px;">
   
     <div class="s-grafico-real">
     <div class="t-girada">T</div>
@@ -1035,13 +1472,13 @@ z-index: 9999 !important;
   
   <div class="s-nombre-real">7</div></div>
 
-<div id="s6_base" class="senal-unificada f-rojo" style="top: 705px; left: 870px;"><div class="s-nombre-real">6</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s6_base" class="senal-unificada f-rojo" style="top: 705px; left: 3370px;"><div class="s-nombre-real">6</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 
 
 
 
-<div id="s5_base" class="senal-unificada f-rojo" style="top: 860px; left: 860px;">
+<div id="s5_base" class="senal-unificada f-rojo" style="top: 860px; left: 3360px;">
   
     <div class="s-grafico-real">
     <div class="t-girada">T</div>
@@ -1051,13 +1488,13 @@ z-index: 9999 !important;
   
   <div class="s-nombre-real">5</div></div>
 
-<div id="s4_base" class="senal-unificada f-rojo" style="top: 905px; left: 870px;"><div class="s-nombre-real">4</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s4_base" class="senal-unificada f-rojo" style="top: 905px; left: 3370px;"><div class="s-nombre-real">4</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 
 
 
 
-<div id="s3_base" class="senal-unificada f-rojo" style="top: 1060px; left: 860px;">
+<div id="s3_base" class="senal-unificada f-rojo" style="top: 1060px; left: 3360px;">
   
     <div class="s-grafico-real">
     <div class="t-girada">T</div>
@@ -1067,9 +1504,29 @@ z-index: 9999 !important;
   
   <div class="s-nombre-real">3</div></div>
 
-<div id="s2_base" class="senal-unificada f-rojo" style="top: 1105px; left: 870px;"><div class="s-nombre-real">2</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s2_base" class="senal-unificada f-rojo" style="top: 1105px; left: 3370px;"><div class="s-nombre-real">2</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s1_base" class="senal-unificada f-rojo" style="top: 1360px; left: 860px;">
+<div id="s16_base" class="senal-unificada f-rojo" style="top: 1105px; left: 4800px;"><div class="s-nombre-real">16</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s39_base" class="senal-unificada f-rojo" style="top: 1005px; left: 4800px;"><div class="s-nombre-real">39</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s15_base" class="senal-unificada f-rojo" style="top: 1205px; left: 5120px;"><div class="s-nombre-real">15</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s14_base" class="senal-unificada f-rojo" style="top: 1365px; left: 5620px;"><div class="s-nombre-real">14</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s12_base" class="senal-unificada f-rojo" style="top: 1505px; left: 4670px;"><div class="s-nombre-real">12</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+
+
+
+<div id="s36_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top:1370px; left: 4505px;"><div class="s-nombre-real">36</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s20_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top:1470px; left: 4505px;"><div class="s-nombre-real">20</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s13_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top:1570px; left: 5205px;"><div class="s-nombre-real">13</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+
+
+
+<div id="s1_base" class="senal-unificada f-rojo" style="top: 1360px; left: 3360px;">
   
     <div class="s-grafico-real">
     <div class="t-girada">T</div>
@@ -1080,6 +1537,21 @@ z-index: 9999 !important;
   <div class="s-nombre-real">1</div></div>
 
 
+<div id="s50_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1170px; left: 7915px;"><div class="s-nombre-real">50</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s48_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 7915px;"><div class="s-nombre-real">48</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s47_base" class="senal-unificada f-rojo" style="top: 1000px; left: 7555px;"><div class="s-nombre-real">47</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s35_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1070px; left: 7510px;"><div class="s-nombre-real">35</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s34_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1160px; left: 7510px;"><div class="s-nombre-real">34</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s33_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1270px; left: 7510px;"><div class="s-nombre-real">33</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s32_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 7510px;"><div class="s-nombre-real">32</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s43_base" class="senal-unificada f-rojo" style="top: 1195px; left: 7555px;"><div class="s-nombre-real">43</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+
+<div id="s26r_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1070px; left: 6110px;"><div class="s-nombre-real">26</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s23r_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1170px; left: 6110px;"><div class="s-nombre-real">23</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s21r_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1270px; left: 6110px;"><div class="s-nombre-real">21</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s20r_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1370px; left: 6110px;"><div class="s-nombre-real">20</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 
 
@@ -1094,6 +1566,20 @@ z-index: 9999 !important;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="linea-limite linea-v" style="top: 970px; left: 7550px; height: 495px;"></div>
 
 
 <div class="linea-limite linea-v" style="top: 970px; left: 8495px; height: 235px;"></div>
@@ -1103,6 +1589,11 @@ z-index: 9999 !important;
 <div class="linea-limite linea-v" style="top: 970px; left: 9925px; height: 335px;"></div>
 <div class="linea-limite linea-h" style="top: 1305px; left: 9925px; width: 125px;"></div>
 <div class="linea-limite linea-v" style="top: 1305px; left: 10050px; height: 160px;"></div>
+
+<div class="texto-amarillo-custom" style="top: 1035px; left: 7200px;">VIA PRINCIPAL ASC.</div>
+<div class="texto-amarillo-custom" style="top: 1135px; left: 7200px;">VIA PRINCIPAL DESC.</div>
+<div class="texto-amarillo-custom" style="top: 1235px; left: 7200px;">VIA LOCAL ASC.</div>
+<div class="texto-amarillo-custom" style="top: 1335px; left: 7200px;">VIA LOCAL DESC.</div>
 
 
 
@@ -1115,7 +1606,7 @@ z-index: 9999 !important;
 <div class="cd-via-panelEM"><div><div id="led-CDV1_EM" class="led-10mm"></div>CDV1</div><div><div id="led-CDV2_EM" class="led-10mm"></div>CDV2</div><div><div id="led-RF_EM" class="led-10mm"></div>R.F</div><div><div id="led-RU_EM" class="led-10mm"></div>R.U</div></div>
 
 <div class="estacion" style="top: 940px; left: 9440px;">EMPALME MALDONADO</div>
-<div class="estacion" style="top: 860px; left: 110px;">RETIRO</div>
+<div class="estacion" style="top: 1495px; left: 3055px;">RETIRO</div>
 
 
 
@@ -1124,6 +1615,13 @@ z-index: 9999 !important;
 <div id="cP1AT" class="via v-abajo" data-nombre="P1AT" style="top: 935px; left: 7258px; width: 70px; transform: rotate(-45deg);"></div>
 
 <div id="cO4T" class="via v-arriba" data-nombre="O4T" style="top: 850px; left: 7530px; width: 315px;"></div>
+
+
+
+
+
+
+
  
 <div id="cvPA3" class="via v-abajo" data-nombre="CVPA3" style="top: 1050px; left: 7950px; width: 195px;"></div>
 <div id="cvPA5" class="via v-abajo" data-nombre="CVPA5" style="top: 1050px; left: 8150px; width: 215px;"></div>
@@ -1176,7 +1674,7 @@ z-index: 9999 !important;
 <div id="w18aminus" class="via diagonal via-fantasma" style="top: 1152px; left: 9386px; width: 66px; transform: rotate(-45deg);"></div>
 
 <div id="w14bplus" class="via v-abajo" data-nombre="14B" style="top: 1150px; left: 9450px; width: 85px;"></div>
-<div id="w14bpm" class="via v-abajo" data-nombre="CVD14A" style="top: 1150px; left: 9535px; width: 32px;"></div>
+<div id="w14bpm" class="via v-arriba" data-nombre="CVPD14A" style="top: 1150px; left: 9535px; width: 32px;"></div>
 <div id="w14bminus" class="via diagonal via-fantasma" style="top: 1202px; left: 9487px; width: 70px; transform: rotate(-45deg);"></div>
 
 <div id="w14aplus" class="via" style="top: 1250px; left: 9440px; width: 110px;"></div>
@@ -1200,7 +1698,7 @@ z-index: 9999 !important;
 <div id="w11cminus" class="via diagonal via-fantasma" style="top: 1147px; left: 9770px; width: 70px; transform: rotate(45deg);"></div>
 
 <div id="w12aplus" class="via v-abajo" data-nombre="12A" style="top: 1150px; left: 9627px; width: 58px;"></div>
-<div id="w12apm" class="via v-abajo" data-nombre="CVPD14B" style="top: 1150px; left: 9572px; width: 55px;"></div>
+<div id="w12apm" class="via v-arriba" data-nombre="CVPD14B" style="top: 1150px; left: 9572px; width: 55px;"></div>
 <div id="w12aminus" class="via diagonal via-fantasma" style="top: 1147px; left: 9620px; width: 68px; transform: rotate(45deg);"></div>
 
 <div id="w12dplus" class="via" style="top: 1250px; left: 9550px; width: 166px;"></div>
@@ -1248,6 +1746,7 @@ z-index: 9999 !important;
 
 
 
+<div id="cv3fin" class="via v-abajo" data-nombre="cv3fin" style="top: 1150px; left: 3793px; width: 2145px;"></div>
 
 
 
@@ -1258,7 +1757,7 @@ z-index: 9999 !important;
 
 <div id="sO6_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 970px; left: 8015px;"><div class="s-nombre-real">O6</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s62_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1075px; left: 8905px;"><div class="s-nombre-real">62</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s62_base" class="senal-unificada f-rojo sentido-izq nombre-s-abajo" style="top: 1070px; left: 8905px;"><div class="s-nombre-real">62</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 <div id="s63_base" class="senal-unificada f-rojo nombre-s-abajo" style="top: 975px; left: 8500px;"><div class="s-nombre-real">63</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
@@ -1272,7 +1771,7 @@ z-index: 9999 !important;
 
 <div id="s65_base" class="senal-unificada f-rojo" style="top: 1300px; left: 9150px;"><div class="s-nombre-real">65</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
-<div id="s69_base" class="senal-unificada f-rojo" style="top: 1170px; left: 8450px;"><div class="s-nombre-real">69</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
+<div id="s69_base" class="senal-unificada f-rojo" style="top: 1165px; left: 8450px;"><div class="s-nombre-real">69</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
 <div id="s79_base" class="senal-unificada f-rojo" style="top: 1000px; left: 10250px;"><div class="s-nombre-real">79</div><div class="s-grafico-real"><div class="t-girada">T</div><div class="circulo-led"></div></div></div>
 
@@ -2937,14 +3436,15 @@ window.addEventListener('load', function() {
         "W32a": { pm: 'w32apm', plus: 'w32aplus', minus: 'w32aminus'},
         "W32b": { pm: 'w32bpm', plus: 'w32bplus', minus: 'w32bminus'},
         "W33a": { pm: 'w33apm', plus: 'w33aplus', minus: 'w33aminus'},
-        "W33b": { pm: 'w33bpm', plus: 'w33bplus', minus: 'w33bminus'}
+        "W33b": { pm: 'w33bpm', plus: 'w33bplus', minus: 'w33bminus'},
+        "W5a": { pm: 'w5apm', plus: 'w5aplus', minus: 'w5aminus'},
+        "W5b": { pm: 'w5bpm', plus: 'w5bplus', minus: 'w5bminus'},
+        "W14ar": { pm: 'w14arpm', plus: 'w14arplus', minus: 'w14arminus'},
+        "W14br": { pm: 'w14brpm', plus: 'w14brplus', minus: 'w14brminus'},
+        "W16a": { pm: 'w16apm', plus: 'w16aplus', minus: 'w16aminus'},
+        "W16b": { pm: 'w16bpm', plus: 'w16bplus', minus: 'w16bminus'}
 
-
-
-
-
-                
-    };
+       };
 
     
    var tic = true;
@@ -3070,10 +3570,33 @@ window.addEventListener('load', function() {
     var curW33a_estado = "1";
     var curW33b_estado = "1";
 
+// Variables de avería Retiro
+
+    var flagAveria_Ret5a = 0;
+    var flagAveria_Ret5b = 0;
+    var flagAveria_Ret14ar = 0;
+    var flagAveria_Ret14br = 0;
+    var flagAveria_Ret16a = 0;
+    var flagAveria_Ret16b = 0;
 
 
 
 
+    var w5a_estado = 0
+    var w5b_estado = 0
+    var w14ar_estado = 0
+    var w14br_estado = 0
+    var w16a_estado = 0
+    var w16b_estado = 0
+
+
+
+    var curW5a_estado = "1";
+    var curW5b_estado = "1";
+    var curW14ar_estado = "1";
+    var curW14br_estado = "1";
+    var curW16a_estado = "1";
+    var curW16b_estado = "1";
 
 
 
@@ -3316,6 +3839,16 @@ setInterval(function() {
    procesarCambioGeneral("W32b", TABLA_CAMBIOS["W32b"], curW32b, w32b_estado, flagAveria_Mal32b == 1, tic);
    procesarCambioGeneral("W33a", TABLA_CAMBIOS["W33a"], curW33a, w33a_estado, flagAveria_Mal33a == 1, tic);
    procesarCambioGeneral("W33b", TABLA_CAMBIOS["W33b"], curW33b, w33b_estado, flagAveria_Mal33b == 1, tic);
+
+// Cada uno usa su propia avería independiente retiro
+   
+   procesarCambioGeneral("W5a", TABLA_CAMBIOS["W5a"], curW5a, w5a_estado, flagAveria_Ret5a == 1, tic);
+   procesarCambioGeneral("W5b", TABLA_CAMBIOS["W5b"], curW5b, w5b_estado, flagAveria_Ret5b == 1, tic);
+   procesarCambioGeneral("W14ar", TABLA_CAMBIOS["W14ar"], curW14ar, w14ar_estado, flagAveria_Ret14ar == 1, tic);
+   procesarCambioGeneral("W14br", TABLA_CAMBIOS["W14br"], curW14br, w14br_estado, flagAveria_Ret14br == 1, tic);
+   procesarCambioGeneral("W16a", TABLA_CAMBIOS["W16a"], curW16a, w16a_estado, flagAveria_Ret16a == 1, tic);
+   procesarCambioGeneral("W16b", TABLA_CAMBIOS["W16b"], curW16b, w16b_estado, flagAveria_Ret16b == 1, tic);
+
   
 
 // Copiar la clase exacta de color de w75minus a w75mm
@@ -3848,6 +4381,84 @@ function actualizarTableroMaldonado() {
 // Ejecución segura inicial
 actualizarTableroMaldonado();
 
+
+
+
+
+
+// --- RETIRO: Actualización independiente de LEDs de Cabecera y Circuitos ---
+
+// --- CONFIGURACIÓN DE APARATOS DE VÍA - RETIRO ---
+
+var cambiosRetiroConfig = [
+    { plus: 'w5aplus', minus: 'w5aminus', pm: 'w5apm', cur: typeof curW5a !== 'undefined' ? curW5a : "1", avg: typeof flagAveria_Ret5a !== 'undefined' ? flagAveria_Ret5a : 0 },
+    { plus: 'w5bplus', minus: 'w5bminus', pm: 'w5bpm', cur: typeof curW5b !== 'undefined' ? curW5b : "1", avg: typeof flagAveria_Ret5b !== 'undefined' ? flagAveria_Ret5b : 0 },
+     { plus: 'w14arplus', minus: 'w14arminus', pm: 'w14arpm', cur: typeof curW14ar !== 'undefined' ? curW14ar : "1", avg: typeof flagAveria_Ret14ar !== 'undefined' ? flagAveria_Ret14ar : 0 },
+    { plus: 'w14brplus', minus: 'w14brminus', pm: 'w14brpm', cur: typeof curW14br !== 'undefined' ? curW14br : "1", avg: typeof flagAveria_Ret14br !== 'undefined' ? flagAveria_Ret14br : 0 },
+     { plus: 'w16aplus', minus: 'w16aminus', pm: 'w16apm', cur: typeof curW16a !== 'undefined' ? curW16a : "1", avg: typeof flagAveria_Ret16a !== 'undefined' ? flagAveria_Ret16a : 0 },
+    { plus: 'w16bplus', minus: 'w16bminus', pm: 'w16bpm', cur: typeof curW16b !== 'undefined' ? curW16b : "1", avg: typeof flagAveria_Ret16b !== 'undefined' ? flagAveria_Ret16b : 0 }
+
+
+
+
+
+    ];
+
+// 1. Actualizar circuitos y averías en diagrama lineal para Retiro
+cambiosRetiroConfig.forEach(function(c) {
+    var pEl = document.getElementById(c.plus);
+    var mEl = document.getElementById(c.minus);
+    var pmEl = document.getElementById(c.pm);
+
+    if (!pEl || !mEl || !pmEl) return;
+
+    [pEl, mEl, pmEl].forEach(el => el.classList.remove('via-fantasma'));
+
+    var enAveriaYParpadeo = (Number(c.avg) === 1 && typeof tic !== 'undefined' && tic);
+
+    if (String(c.cur) === "1") {
+        mEl.classList.add('via-fantasma');
+        if (enAveriaYParpadeo) {
+            pmEl.classList.add('via-fantasma');
+            pEl.classList.add('via-fantasma');
+        }
+    } else {
+        pEl.classList.add('via-fantasma');
+        if (enAveriaYParpadeo) {
+            pmEl.classList.add('via-fantasma');
+            mEl.classList.add('via-fantasma');
+        }
+    }
+});
+
+
+// 2. Actualizar Tablero Superior de Maldonado de forma aislada
+function actualizarTableroRetiro() {
+     if (typeof curW5a === 'undefined') return;
+
+
+    function actualizarLEDsCambio(curVal, avgVal, idA, idP, idM) {
+        let la = document.getElementById(idA);
+        let lp = document.getElementById(idP);
+        let lm = document.getElementById(idM);
+        if (la) la.classList.toggle('l-red', Number(avgVal) === 1);
+        if (lp) lp.classList.toggle('l-white', String(curVal) === "1");
+        if (lm) lm.classList.toggle('l-white', String(curVal) !== "1");
+    }
+
+    actualizarLEDsCambio(curW5a, flagAveria_Ret5a, 'AW5a', 'LW5aP', 'LW5aM');
+    actualizarLEDsCambio(curW5b, flagAveria_Ret5b, 'AW5b', 'LW5bP', 'LW5bM');
+    actualizarLEDsCambio(curW14ar, flagAveria_Ret14ar, 'AW14ar', 'LW14arP', 'LW14arM');
+    actualizarLEDsCambio(curW14br, flagAveria_Ret14br, 'AW14br', 'LW14brP', 'LW14brM');
+    actualizarLEDsCambio(curW16a, flagAveria_Ret16a, 'AW16a', 'LW16aP', 'LW16aM');
+    actualizarLEDsCambio(curW16b, flagAveria_Ret16b, 'AW16b', 'LW16bP', 'LW16bM');
+
+
+    
+}
+
+// Ejecución segura inicial
+actualizarTableroRetiro();
 
 
 
@@ -5358,6 +5969,7 @@ procesarEnclavamientosCambios(dataMal.enclavamientos);
 
 
 // --- LISTENER EN TIEMPO REAL PARA SECTOR RETIRO ---
+// --- LISTENER EN TIEMPO REAL PARA SECTOR RETIRO ---
 db.ref('cabinas/retiro').on('value', (snapshot) => {
     var dataRet = snapshot.val();
     if (!dataRet) return;
@@ -5372,7 +5984,7 @@ db.ref('cabinas/retiro').on('value', (snapshot) => {
         }
     }
 
-    // 2. Procesamiento de Vías (Aquí marcan cb1, cb2, cv1, cv2, etc.)
+    // 2. Procesamiento de Vías
     if (dataRet.vias) {
         Object.keys(dataRet.vias).forEach(function(id) {
             var val = dataRet.vias[id];
@@ -5381,18 +5993,53 @@ db.ref('cabinas/retiro').on('value', (snapshot) => {
                 setEstadoCircuito(el.id, val);
             }
         });
+        if(dataRet.vias["w5bpm"] !== undefined) w5b_estado = dataRet.vias["w5bpm"];
+        if(dataRet.vias["w5apm"] !== undefined) w5a_estado = dataRet.vias["w5apm"];
+        if(dataRet.vias["w14brpm"] !== undefined) w14br_estado = dataRet.vias["w14brpm"];
+        if(dataRet.vias["w14arpm"] !== undefined) w14ar_estado = dataRet.vias["w14arpm"];
+        if(dataRet.vias["w16bpm"] !== undefined) w16b_estado = dataRet.vias["w16bpm"];
+        if(dataRet.vias["w16apm"] !== undefined) w16a_estado = dataRet.vias["w16apm"];
+
+
     }
 
-    // 3. Procesamiento de Señales
+    // 3. Lectura de Posiciones de Cambios y Averías desde Firebase
+    if (dataRet.cambios) {
+         if (dataRet.cambios.W5a !== undefined) curW5a = dataRet.cambios.W5a.toString();
+         if (dataRet.cambios.W5b !== undefined) curW5b = dataRet.cambios.W5b.toString(); 
+         if (dataRet.cambios.W14ar !== undefined) curW14ar = dataRet.cambios.W14ar.toString();
+         if (dataRet.cambios.W14br !== undefined) curW14br = dataRet.cambios.W14br.toString(); 
+         if (dataRet.cambios.W16a !== undefined) curW16a = dataRet.cambios.W16a.toString();
+         if (dataRet.cambios.W16b !== undefined) curW16b = dataRet.cambios.W16b.toString(); 
+
+         if (dataRet.cambios.AW5ar !== undefined) flagAveria_Ret5a = parseInt(dataRet.cambios.AW5a);
+         if (dataRet.cambios.AW5br !== undefined) flagAveria_Ret5b = parseInt(dataRet.cambios.AW5b); 
+         if (dataRet.cambios.AW14ar !== undefined) flagAveria_Ret14ar = parseInt(dataRet.cambios.AW14ar);
+         if (dataRet.cambios.AW14br !== undefined) flagAveria_Ret14br = parseInt(dataRet.cambios.AW14br); 
+         if (dataRet.cambios.AW16a !== undefined) flagAveria_Ret16a = parseInt(dataRet.cambios.AW16a);
+         if (dataRet.cambios.AW16b !== undefined) flagAveria_Ret16b = parseInt(dataRet.cambios.AW16b); 
+    }
+
+ var datosEncRet = dataRet.enclavamientos || dataRet;
+procesarEnclavamientosCambios(dataRet.enclavamientos);
+
+
+    // 4. Procesamiento de Señales y Tráfico
     if (dataRet.senales && typeof procesarBloqueSenales === 'function') {
         procesarBloqueSenales(dataRet.senales);
     }
-
-    // 4. Procesamiento de Tráfico
     if (dataRet.trafico && typeof procesarDatosTrafico === 'function') {
         procesarDatosTrafico(dataRet.trafico, "RE");
     }
+
+    // -> ¡AQUÍ ESTABA FALTANDO ESTE LLAMADO! <-
+    if (typeof actualizarTableroRetiro === 'function') {
+        actualizarTableroRetiro();
+    }
+
+    pW();
 });
+
 
 // --- 2F PROCESAMIENTO SECTOR TIGRE ---
 
